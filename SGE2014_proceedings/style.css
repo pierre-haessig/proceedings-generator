@@ -1,0 +1,13 @@
+/*CSS style sheet for SGE 2014 proceedings*/
+
+body {
+  font-family: sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000077;
+}
+
+.article_list small {
+  color: gray;
+}
