@@ -23,10 +23,10 @@ loader =  FileSystemLoader(templ_path)
 env = Environment(loader=loader, undefined=jinja2.StrictUndefined)
 
 # Home:
-template = env.get_template('home.html')
+template = env.get_template('index.html')
 
 
-with io.open(join(render_path,'home.html'),
+with io.open(join(render_path,'index.html'),
              'w', encoding='utf-8') as out:
     out.write(template.render(config_vars, root_path='./'))
 
