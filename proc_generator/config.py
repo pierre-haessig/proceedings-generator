@@ -10,10 +10,12 @@ from __future__ import unicode_literals
 # Configuration dict
 c={}
 
+# language, for <html lang="xx"> attribute:
+c['lang'] = 'fr'
+
 # Event (conference) parameters:
 c['event_name'] = 'SGE 2014'
 c['event_date'] = '8—10 juillet 2014'
 c['event_location']= 'Cachan (France)'
 c['event_website'] = 'http://sge2014.sciencesconf.org/'
 c['event_logo'] = 'logo_sge.png'
-

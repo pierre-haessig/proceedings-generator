@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+
+  <title>{% block title %}Actes de la conférence{% endblock %} - {{ event_name }} </title>
+  <meta name="description" content="Actes de la conférence {{ event_name }}">
+  <meta name="author" content="organisateurs {{ event_name }}">
+
+  <link rel="stylesheet" href="{{ root_path }}style.css">
+</head>
+
+<body>
+
+<header>
+  {% block header %}
+  <img class='logo' src='logo_sge.png' alt="logo SGE">
+  <h1>{{ event_name }}</h1>
+  <em>{{ event_date }}, {{ event_location }}</em>
+  
+  <span style="clear:both;"></span>
+  {% endblock header %}
+</header>
+
+<section class="content">
+  {% block content %}
+  {% endblock content %}
+</section>
+
+<footer>
+  {% block footer %}
+  <small>{{ event_name }}, {{ event_date }}, {{ event_location }}</small>
+  {% endblock footer %}
+</footer>
+
+</body>
+</html>

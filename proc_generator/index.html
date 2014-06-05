@@ -1,29 +1,7 @@
-<!doctype html>
+{% extends "base.html" %}
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+{% block content %}
+    <h1>Actes de la conférence</h1>
 
-  <title>{{ event_name }} | Actes de la conférence</title>
-  <meta name="description" content="Actes de la conférence {{ event_name }}">
-  <meta name="author" content="Pierre Haessig">
-
-  <link rel="stylesheet" href="{{ root_path }}style.css">
-</head>
-
-<body>
-
-<header>
-  <img class='logo', src='logo_sge.png' alt="logo SGE">
-  <h1>{{ event_name }}</h1>
-  <em>{{ event_date }}, {{ event_location }}</em>
-</header>
-
-<section>
-  <h1>Actes de la conférence</h1>
-  
-  <a href='article_list.html'>Liste de toutes les contributions</a>
-</section>
-
-</body>
-</html>
+    <a href='article_list.html'>Liste de toutes les contributions</a>
+{% endblock content %}

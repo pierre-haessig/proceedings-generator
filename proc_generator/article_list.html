@@ -1,21 +1,8 @@
-<!doctype html>
+{% extends "base.html" %}
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>{{ event_name }} | Liste des contributions</title>
-  <meta name="description" content="Actes de la conférence {{ event_name }}">
-  <meta name="author" content="Pierre Haessig">
-
-  <link rel="stylesheet" href="{{ root_path }}style.css">
-</head>
-
-<body>
-  <h1>Liste des contributions de la conférence {{ event_name }}</h1>
-  <h2>{{ event_date }}, {{ event_location }}</h2>
-
-  <div>
+{% block title %}Liste des contributions{% endblock title %}
+{% block content %}
+  <h1>Liste des contributions</h1>
 
   <ol class="article_list">
   {% for art in articles %}
@@ -28,7 +15,6 @@
     </li>
   {% endfor %}
   </ol>
-</div>
 
-</body>
-</html>
+{% endblock content %}
+
