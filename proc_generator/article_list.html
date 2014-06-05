@@ -8,8 +8,7 @@
   <meta name="description" content="Actes de la conférence {{ event_name }}">
   <meta name="author" content="Pierre Haessig">
 
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="{{ root_path }}style.css">
 </head>
 
 <body>
@@ -18,9 +17,15 @@
 
   <div>
 
-  <ol>
-  {% for item in articles %}
-    <li>{{ item.authors }} : <br> <em>"{{ item.title }}"</em></li>
+  <ol class="article_list">
+  {% for art in articles %}
+    <li>{{ art.authors }} :
+    <br> <em>"{{ art.title }}"</em>
+    <br> <small>{{ art.labos }}</small>
+    <br>
+    <strong>Topic</strong> : {{ art.topics}},
+    <strong>Session</strong> : {{ art.id_session}}
+    </li>
   {% endfor %}
   </ol>
 </div>

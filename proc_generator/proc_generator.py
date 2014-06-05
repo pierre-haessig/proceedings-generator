@@ -7,12 +7,13 @@
 from __future__ import division, print_function, unicode_literals
 
 import os.path
+from os.path import join
 import io
 import jinja2
 from jinja2 import Environment, FileSystemLoader
 
 from config import c as config_vars
-import read_article_csv
+from read_article_csv import read_articles
 
 render_path = '../SGE2014_proceedings'
 data_path = '../SGE2014_data'
@@ -25,18 +26,23 @@ env = Environment(loader=loader, undefined=jinja2.StrictUndefined)
 template = env.get_template('home.html')
 
 
-with io.open(os.path.join(render_path,'home.html'),
+with io.open(join(render_path,'home.html'),
              'w', encoding='utf-8') as out:
-    out.write(template.render(config_vars))
+    out.write(template.render(config_vars, root_path='./'))
 
-# List of articles
+# List of articles:
 template = env.get_template('article_list.html')
 
-articles = read_article_csv.article_iterator(os.path.join(data_path,'fichier_brut_4juin2014.csv'))
+articles = list(read_articles(join(data_path,
+                              'fichier_retravail_4juin2014.csv')) )
+header, articles = articles[0], articles[1:]
+
+articles.sort(key= lambda item: item['authors'])
+
 
 config_vars['articles'] = articles
 
-with io.open(os.path.join(render_path,'article_list.html'),
+with io.open(join(render_path,'article_list.html'),
              'w', encoding='utf-8') as out:
-    out.write(template.render(config_vars))
+    out.write(template.render(config_vars, root_path='./'))
 
