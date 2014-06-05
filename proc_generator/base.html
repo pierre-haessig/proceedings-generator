@@ -8,18 +8,24 @@
   <meta name="description" content="Actes de la conférence {{ event_name }}">
   <meta name="author" content="organisateurs {{ event_name }}">
 
-  <link rel="stylesheet" href="{{ root_path }}style.css">
+  <link rel="stylesheet" href="{{ root_path }}/style.css">
 </head>
 
 <body>
 
 <header>
   {% block header %}
-  <img class='logo' src='logo_sge.png' alt="logo SGE">
+  <img class='logo' src='{{ root_path }}/logo_sge.png' alt="logo SGE">
   <h1>{{ event_name }}</h1>
   <em>{{ event_date }}, {{ event_location }}</em>
   
-  <span style="clear:both;"></span>
+  <nav>
+    <a href='{{ root_path }}/index.html'>Accueil</a>
+    <a href='{{ root_path }}/article_list.html'>Liste de toutes les contributions</a>
+    <a href='{{ root_path }}/session_list.html'>Les sessions</a>
+    <a href='{{ root_path }}/topic_list.html'>Les topics</a>
+    <a href='{{ root_path }}/author_list.html'>Les auteurs</a>
+  </nav>
   {% endblock header %}
 </header>
 

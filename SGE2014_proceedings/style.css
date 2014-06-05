@@ -5,17 +5,15 @@ body {
   margin:0px;
 }
 
+a:link {
+  color: #000077;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #000077;
 }
 
-.article_list small {
-  color: gray;
-}
-
-img.logo {
-  float:right;
-}
+/*Header, footer*/
 
 header, footer {
   overflow: hidden;
@@ -30,6 +28,15 @@ header {
   padding-left: 10px;
 }
 
+header nav {
+    clear: both; /*clear the logo*/
+    padding-top: 5px;
+    text-align:center;
+}
+
+img.logo {
+  float:right;
+}
 
 footer {
   text-align: center;
@@ -39,4 +46,35 @@ footer {
 section.content {
   overflow: hidden;
   padding: 5px
+}
+
+/* List of all articles */
+.article_list small {
+  color: gray;
+}
+
+
+/*Article detail page*/
+p.download-pdf {
+  float: right;
+  text-align:center;
+}
+
+.download-pdf img {
+  width: 128px;
+}
+
+section.article-info {
+  width: 500px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+div.abstract {
+  background-color: #EEEEEE;
+  padding: 5px 15px;
+}
+
+.abstract p {
+  font-style: italic;
 }

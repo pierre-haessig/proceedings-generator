@@ -28,7 +28,7 @@ template = env.get_template('index.html')
 
 with io.open(join(render_path,'index.html'),
              'w', encoding='utf-8') as out:
-    out.write(template.render(config_vars, root_path='./'))
+    out.write(template.render(config_vars, root_path='.'))
 
 # List of articles:
 template = env.get_template('article_list.html')
@@ -44,5 +44,16 @@ config_vars['articles'] = articles
 
 with io.open(join(render_path,'article_list.html'),
              'w', encoding='utf-8') as out:
-    out.write(template.render(config_vars, root_path='./'))
+    out.write(template.render(config_vars, root_path='.'))
+
+### Detailed Article pages:
+template = env.get_template('article_detail.html')
+
+for art in articles:
+    fname = 'article_{:s}.html'.format(art['docid'])
+    print(fname)
+    with io.open(join(render_path, 'articles', fname),
+                 'w', encoding='utf-8') as out:
+        out.write(template.render(config_vars, article=art, root_path='..'))
+    
 

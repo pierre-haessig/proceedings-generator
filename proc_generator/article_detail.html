@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Fiche article XXXX{% endblock title %}
+{% block content %}
+
+  <p class='download-pdf'>
+    <a href='article_{{article.docid}}.pdf'>
+    <img src='pdf_icon.png' alt='pdf icon'> <br>
+    Article PDF
+    </a>
+  </p>
+  
+  <section class='article-info'>
+  <h1>{{ article.title }}</h1>
+  
+    <p>
+    Auteurs :
+    {{ article.authors }}
+    </p>
+    
+    <p><small>
+    Affiliations :
+    {{ article.labos }}
+    </small></p>
+    
+    <p>
+    <strong>Topic</strong> : {{ article.topics }},
+    <strong>Session</strong> : {{ article.id_session }}
+    </p>
+    
+    <div class='abstract'>
+      <h3>Résumé</h3>
+      <p>
+      {{ article.abstract }}
+      </p>
+    </div>
+
+  </section>
+  
+  <nav>
+  <a href='../article_list.html'> Retour à la liste des contributions</a>
+  </nav>
+{% endblock content %}
+
