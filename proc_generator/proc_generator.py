@@ -13,7 +13,7 @@ import jinja2
 from jinja2 import Environment, FileSystemLoader
 
 from config import c as config_vars
-from read_article_csv import read_articles
+from data_reader import read_articles
 
 render_path = '../SGE2014_proceedings'
 data_path = '../SGE2014_data'
