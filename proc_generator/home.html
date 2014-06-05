@@ -12,8 +12,18 @@
 </head>
 
 <body>
-  <h1>Actes de la conférence {{ event_name }}</h1>
-  <h2>{{ event_date }}, {{ event_location }}</h2>
+
+<header>
+  <img class='logo', src='logo_sge.png' alt="logo SGE">
+  <h1>{{ event_name }}</h1>
+  <em>{{ event_date }}, {{ event_location }}</em>
+</header>
+
+<section>
+  <h1>Actes de la conférence</h1>
+  
+  <a href='article_list.html'>Liste de toutes les contributions</a>
+</section>
 
 </body>
 </html>
