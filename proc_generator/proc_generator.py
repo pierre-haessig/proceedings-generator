@@ -88,5 +88,17 @@ for art in articles:
     with io.open(join(render_path, 'articles', fname),
                  'w', encoding='utf-8') as out:
         out.write(template.render(config_vars, article=art, root_path='..'))
-    
+
+# 4) Detailed topic pages:
+template = env.get_template('topic_detail.html')
+
+for top in topics:
+    fname = 'topic_{}.html'.format(topics_code[top])
+    print(fname)
+    with io.open(join(render_path, 'topics', fname),
+                 'w', encoding='utf-8') as out:
+        out.write(template.render(config_vars, topic=top,
+                                  articles=topics[top], root_path='..'))
+
+
 

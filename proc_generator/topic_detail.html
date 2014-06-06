@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Topic "{{ topic }}"{% endblock title %}
+{% block content %}
+
+  <h1>Topic "{{ topic }}"</h1>
+    
+    {{articles|count}} articles dans cette thématique :
+    
+    {% import 'article_macros.html' as article_macros %}
+    <ul>
+    {{ article_macros.list(articles, root_path) }}
+    <ul>
+
+{% endblock content %}
+

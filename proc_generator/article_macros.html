@@ -1,0 +1,32 @@
+{% macro list(articles, root_path) -%}
+{% for art in articles %}
+    <li>{{ art.authors_no_affil }} :
+    <br> <em>"{{ art.title }}"</em>
+    <br>
+    Topic {{ art.topics}},
+    Session {{ art.id_session}},
+    <a href="{{ root_path }}/articles/article_{{ art.docid }}.html">
+        fiche détaillée</a>,
+    <a href="{{ root_path }}/articles/article_{{ art.docid }}.pdf">
+        article PDF</a>
+    </li>
+{% endfor %}
+{%- endmacro %}
+
+{% macro list_details(articles, root_path) -%}
+{% for art in articles %}
+    <li>{{ art.authors }} :
+    <br> <em>"{{ art.title }}"</em>
+    <br> <small>{{ art.labos }}</small>
+    <br>
+    <strong>Topic</strong> : {{ art.topics}},
+    <strong>Session</strong> : {{ art.id_session}}
+    <br>
+    <a href="{{ root_path }}/articles/article_{{ art.docid }}.html">
+        fiche détaillée</a>
+    <a href="{{ root_path }}/articles/article_{{ art.docid }}.pdf">
+        article PDF</a>
+    </li>
+{% endfor %}
+{%- endmacro %}
+
