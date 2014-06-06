@@ -14,17 +14,26 @@
 <body>
 
 <div id='page'>
-<header>
+<header id='header'>
   {% block header %}
   <img class='logo' src='{{ root_path }}/logo_sge.png' alt="logo SGE">
-  <h1>{{ event_name }}</h1>
-  <em>{{ event_date }}, {{ event_location }}</em>
+  <h1 class='event-name'>{{ event_name }}</h1>
+  <h2 class='event-description'>{{ event_date }}, {{ event_location }}</h2>
   
+  
+  {% set navigation_bar = [
+    ('index.html', 'Accueil'),
+    ('article_list.html', 'Les contributions'),
+    ('session_list.html', 'Les sessions'),
+    ('author_list.html', 'Les auteurs'),
+  ] -%}
+  {% set active_page = active_page|default('') -%}
   <nav>
-    <a href='{{ root_path }}/index.html'>Accueil</a>
-    <a href='{{ root_path }}/article_list.html'>Liste de toutes les contributions</a>
-    <a href='{{ root_path }}/session_list.html'>Les sessions</a>
-    <a href='{{ root_path }}/author_list.html'>Les auteurs</a>
+    {% for href, caption in navigation_bar %}
+    <a href="{{ root_path }}/{{ href }}" {%
+     if href == active_page %} class="active"{%
+     endif %}>{{ caption }}</a>
+    {% endfor %}
   </nav>
   {% endblock header %}
 </header>
@@ -34,7 +43,7 @@
   {% endblock content %}
 </section>
 
-<footer>
+<footer id='footer'>
   {% block footer %}
   <small>{{ event_name }}, {{ event_date }}, {{ event_location }}</small>
   {% endblock footer %}

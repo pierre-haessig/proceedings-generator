@@ -3,17 +3,31 @@
 body {
   font-family: sans;
   margin:0px;
+  background-color:#EEE;
 }
 
+ul > li {
+  list-style-type: circle;
+  color
+}
 
 div#page {
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 0 40px;
     max-width: 980px;
+    box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+    background-color: white;
 }
 
 a:link {
   color: #000077;
+  text-decoration: none;
 }
+a:hover {
+  color: #000077;
+  text-decoration: underline;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   color: #000077;
@@ -21,42 +35,94 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Header, footer*/
 
-header, footer {
+#header, #footer {
+  position: relative;
   overflow: hidden;
-  background-color: #AAAAFF;
-  border-style: solid;
   border-width: 1px;
-  border-color: #000099;
+  border-color: #CCC;
 }
 
 
-header {
-  padding-left: 10px;
+#header {
+  padding-top: 10px;
+  border-bottom-style: solid;
 }
 
-header nav {
-    clear: both; /*clear the logo*/
-    padding-top: 5px;
-    text-align:center;
+#header h1.event-name {
+  margin-top:1.5em;
+  font-size: 1.5em;
 }
+
+#header h2.event-description {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+}
+
+#header img.logo {
+  max-width: 100%;
+  }
+
+/*header navigation bar*/
+#header nav {
+  clear: both; /*clear the logo*/
+  padding-top: 5px;
+  text-align: left;
+  position: relative;
+}
+
+#header nav a {
+  display: inline-block;
+  margin-right: 1.5em;
+  padding: 5px 0;
+  text-decoration: none;
+  color: #666;
+  
+}
+#header nav a:hover {
+  color: #000;
+  background-color:#eee;
+}
+#header nav a.active {
+  font-weight: bold;
+}
+
 
 img.logo {
   float:right;
 }
 
-footer {
+#footer {
   text-align: center;
   padding: 5px;
+  border-top-style: solid;
 }
 
 section.content {
   overflow: hidden;
-  padding: 5px
+  padding: 0.5em 0;
 }
 
 /* List of all articles */
 .article_list small {
   color: gray;
+}
+
+.article_list li {
+  margin-bottom: 1em;
+}
+ul.article_list li {
+  list-style-type: none;
+  border-left: solid 1px #CCC;
+  padding-left: 5px;
+}
+
+ul.article_list {
+  padding-left: 0;
+}
+
+.article_list em.title {
+  color: #008;
 }
 
 
@@ -71,14 +137,13 @@ p.download-pdf {
 }
 
 section.article-info {
-  width: 500px;
-  margin-left: 10px;
-  margin-bottom: 10px;
+  max-width: 700px;
 }
 
 div.abstract {
   background-color: #EEEEEE;
   padding: 5px 15px;
+  margin: 1em 0;
 }
 
 .abstract p {

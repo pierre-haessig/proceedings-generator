@@ -1,7 +1,9 @@
 {% macro list(articles, root_path) -%}
 {% for art in articles %}
-    <li>{{ art.authors_no_affil }} :
-    <br> <em>"{{ art.title }}"</em>
+  <li>
+    <span class="authors">{{ art.authors_no_affil }} </span> :
+    <br>
+    <em class="title">"{{ art.title }}"</em>
     <br>
     Topic 
     <a href="{{ root_path }}/topics/topic_{{ topics_code.get(art.topics) }}.html">
@@ -12,15 +14,18 @@
         fiche détaillée</a>,
     <a href="{{ root_path }}/articles/article_{{ art.docid }}.pdf">
         article PDF</a>
-    </li>
+  </li>
 {% endfor %}
 {%- endmacro %}
 
 {% macro list_details(articles, root_path) -%}
 {% for art in articles %}
-    <li>{{ art.authors }} :
-    <br> <em>"{{ art.title }}"</em>
-    <br> <small>{{ art.labos }}</small>
+  <li>
+    <span class="authors">{{ art.authors_no_affil }} </span> :
+    <br>
+    <em class="title">"{{ art.title }}"</em>
+    <br>
+    <small>{{ art.labos }}</small>
     <br>
     <!-- 
     <strong>Topic</strong> :
@@ -33,7 +38,7 @@
         fiche détaillée</a>
     <a href="{{ root_path }}/articles/article_{{ art.docid }}.pdf">
         article PDF</a>
-    </li>
+  </li>
 {% endfor %}
 {%- endmacro %}
 
