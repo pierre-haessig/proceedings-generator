@@ -13,6 +13,7 @@
 
 <body>
 
+<div id='page'>
 <header>
   {% block header %}
   <img class='logo' src='{{ root_path }}/logo_sge.png' alt="logo SGE">
@@ -23,7 +24,6 @@
     <a href='{{ root_path }}/index.html'>Accueil</a>
     <a href='{{ root_path }}/article_list.html'>Liste de toutes les contributions</a>
     <a href='{{ root_path }}/session_list.html'>Les sessions</a>
-    <a href='{{ root_path }}/topic_list.html'>Les topics</a>
     <a href='{{ root_path }}/author_list.html'>Les auteurs</a>
   </nav>
   {% endblock header %}
@@ -39,6 +39,7 @@
   <small>{{ event_name }}, {{ event_date }}, {{ event_location }}</small>
   {% endblock footer %}
 </footer>
+</div>
 
 </body>
 </html>

@@ -5,6 +5,12 @@ body {
   margin:0px;
 }
 
+
+div#page {
+    margin: 0 auto;
+    max-width: 980px;
+}
+
 a:link {
   color: #000077;
 }
