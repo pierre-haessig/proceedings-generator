@@ -10,4 +10,15 @@
     <li><a href='author_list.html'>Les auteurs</a></li>
   </ul>
   
+  <h2>Topics</h2>
+  
+  <ul>
+  {% for top, art_list in topics|dictsort %}
+    <li> {{ top }} :
+      <a href='topics/topic_{{ topics_code.get(top) }}.html'>
+        {{ art_list|count }} articles</a>
+    </li>
+  {% endfor %}
+  </ul>
+  
 {% endblock content %}
