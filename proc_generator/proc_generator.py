@@ -49,7 +49,6 @@ topics_code = {top: '{:03d}'.format(idx)
                for idx, top in enumerate(sorted(topics))}
 
 config_vars['topics'] = topics
-config_vars['topics_code'] = topics_code
 
 
 # build author -> [articles] mapping:
@@ -64,6 +63,7 @@ config_vars['authors'] = {}
 templ_path = os.path.dirname(__file__)
 loader =  FileSystemLoader(templ_path)
 env = Environment(loader=loader, undefined=jinja2.StrictUndefined)
+env.globals['topics_code'] = topics_code
 
 # 1) Index page:
 template = env.get_template('index.html')

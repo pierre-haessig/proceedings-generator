@@ -24,7 +24,9 @@
     </small></p>
     
     <p>
-    <strong>Topic</strong> : {{ article.topics }},
+    <strong>Topic</strong> :
+    <a href="{{ root_path }}/topics/topic_{{ topics_code.get(article.topics) }}.html">
+        {{ article.topics }}</a>
     <strong>Session</strong> : {{ article.id_session }}
     </p>
     
