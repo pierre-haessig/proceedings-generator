@@ -8,6 +8,7 @@ from __future__ import division, print_function, unicode_literals
 
 import os.path
 from os.path import join
+import shutil
 import io
 import jinja2
 from jinja2 import Environment, FileSystemLoader
@@ -72,6 +73,14 @@ else:
 
 config_vars['sponsors'] = sponsors
 
+print('Copying logo files', end=': ')
+# Copy logo files:
+for spons in sponsors:
+    print(spons['logo'], end=', ')
+    logo_src = join(data['path'], spons['logo'])
+    logo_dest = join(data['render_path'], 'images', spons['logo'])
+    shutil.copyfile(logo_src, logo_dest)
+print()
 
 ### Write web pages:
 

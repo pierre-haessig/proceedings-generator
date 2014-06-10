@@ -21,4 +21,17 @@
   {% endfor %}
   </ul>
   
+  <h2>Sponsors</h2>
+  
+  <ul class='sponsor_list'>
+  {% for spon in sponsors %}
+    <li>
+    {% if spon.url %}  <a href='{{ spon.url }}'> {% endif %}
+        <span> {{ spon.name }} </span>
+        <img src='images/{{ spon.logo }}' alt='logo {{ spon.name }}'>
+    {% if spon.url %}  </a> {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+  
 {% endblock content %}
