@@ -1,31 +1,41 @@
+{% macro title_link(art, root_path) -%}
+<a href="{{ root_path }}/articles/article_{{ art.docid }}.html">
+<em class="article-title">"{{ art.title }}"</em>
+</a>
+{%- endmacro %}
+
+{% macro pdf(art, root_path) -%}
+<a href="{{ root_path }}/articles/article_{{ art.docid }}.pdf">article PDF</a>
+{%- endmacro %}
+
+
 {% macro list(articles, root_path) -%}
 {% for art in articles %}
   <li>
-    <span class="authors">{{ art.authors_no_affil }} </span> :
+    <span class="authors">{{ art.authors_no_affil }}</span>.
     <br>
-    <em class="title">"{{ art.title }}"</em>
+    {{ title_link(art, root_path) }}
     <br>
     Topic 
     <a href="{{ root_path }}/topics/topic_{{ topics_code.get(art.topics) }}.html">
         {{ art.topics }}</a>,
     Session
         {{ art.id_session}},
-    <a href="{{ root_path }}/articles/article_{{ art.docid }}.html">
-        fiche détaillée</a>,
-    <a href="{{ root_path }}/articles/article_{{ art.docid }}.pdf">
-        article PDF</a>
+    {{ pdf(art, root_path) }}
+    
   </li>
 {% endfor %}
 {%- endmacro %}
+
 
 {% macro list_details(articles, root_path) -%}
 {% for art in articles %}
   <li>
     <span class="authors">{{ art.authors_no_affil }} </span> :
     <br>
-    <em class="title">"{{ art.title }}"</em>
+    {{ title_link(art, root_path) }}
     <br>
-    <small>{{ art.labos }}</small>
+    <small class='article-affil'>{{ art.labos }}</small>
     <br>
     <!-- 
     <strong>Topic</strong> :
@@ -34,10 +44,7 @@
     -->
     <strong>Session</strong> : {{ art.id_session}}
     <br>
-    <a href="{{ root_path }}/articles/article_{{ art.docid }}.html">
-        fiche détaillée</a>
-    <a href="{{ root_path }}/articles/article_{{ art.docid }}.pdf">
-        article PDF</a>
+    {{ pdf(art, root_path) }}
   </li>
 {% endfor %}
 {%- endmacro %}

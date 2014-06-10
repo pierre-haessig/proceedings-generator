@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% set active_page = "author_list.html" -%}
+
+{% block title %}Liste des auteurs{% endblock title %}
+{% block content %}
+  <h1>Liste des auteurs</h1>
+  
+  <em>Liste des contributions, classées par auteur</em>
+  
+  <nav class='author-index'>
+  Index :
+  {% for letter, auth in author_index|dictsort -%}
+  <a href='#{{auth}}'>{{ letter }}</a>
+  {%- endfor %}
+  </nav>
+  
+  {% import 'article_macros.html' as article_macros %}
+  <ul class="author_list">
+  {% for auth, art_list in authors|dictsort %}
+    <li id="{{ auth }}">{{ auth }}
+    
+    <ul>
+    {% for art in art_list %}
+      <li>
+        {{ article_macros.title_link(art, root_path) }}
+      </li>
+    {% endfor %}
+    </ul>
+    </li>
+  {% endfor %}
+  </ul>
+
+{% endblock content %}

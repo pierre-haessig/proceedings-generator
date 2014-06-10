@@ -135,24 +135,22 @@ ul.sponsor_list span {
 
 /*** List of all articles ***/
 
-.article_list small {
-  color: gray;
+ul.article_list {
+  padding-left: 0;
 }
 
-.article_list li {
-  margin-bottom: 1em;
-}
 ul.article_list li {
+  margin-bottom: 1em;
   list-style-type: none;
   border-left: solid 1px #CCC;
   padding-left: 5px;
 }
 
-ul.article_list {
-  padding-left: 0;
+.article_list small.article-affil {
+  color: gray;
 }
 
-.article_list em.title {
+.article_list em.article-title {
   color: #008;
 }
 
@@ -181,3 +179,52 @@ div.abstract {
 .abstract p {
   font-style: italic;
 }
+
+/* List of authors, with their articles */
+
+nav.author-index {
+  text-align: center;
+  font-size: 1.2em;
+  display: block;
+  margin: 1em 40px;
+  border-style: solid none;
+  border-width: 1px;
+  border-color: #CCC;
+  overflow: hidden;
+}
+nav.author-index a{
+  color: #666;
+  display: inline-block;
+  padding:5px 15px;
+}
+nav.author-index a:hover{
+  color: #000;
+  background-color: #eee;
+  text-decoration: none;
+}
+
+ul.author_list {
+  padding-left: 0;
+}
+ul.author_list > li {
+  margin-bottom: 1em;
+  list-style-type: none;
+}
+
+/*list of articles of the author*/
+ul.author_list > li ul {
+  padding-left: 10px;
+}
+ul.author_list > li li{
+  list-style-type: none;
+}
+ul.author_list > li li:before{
+  content: "— ";
+  color: #CCC;
+}
+
+ul.author_list em.article-title {
+  color: #008;
+  font-size: 0.8em;
+}
+

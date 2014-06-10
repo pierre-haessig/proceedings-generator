@@ -35,7 +35,7 @@ print('{:d} articles read from table "{}"'.format(len(articles),
                                                 data['article_table']))
 
 
-# build topic -> [articles] mapping:
+### build topic -> [articles] mapping:
 topics = {}
 
 for art in articles:
@@ -56,12 +56,33 @@ topics_code = {top: '{:03d}'.format(idx)
 config_vars['topics'] = topics
 
 
-# build author -> [articles] mapping:
+### build author -> [articles] mapping:
 authors = {}
 
-config_vars['authors'] = {}
+for art in articles:
+    art_authors = [name for name, affil in art['authors_split']]
+    for auth in art_authors:
+        if auth not in authors:
+            authors[auth] = []
+        # Append article to its author:
+        authors[auth].append(art)
 
-# Read the sponsors:
+# author index:
+letter = ''
+author_index = {}
+for auth in sorted(authors.keys()):
+    if auth[0] != letter:
+        letter = auth[0]
+        author_index[letter] = auth
+
+
+print('authors stats:')
+print('{:d} authors found'.format(len(authors)))
+
+config_vars['authors']      = authors
+config_vars['author_index'] = author_index
+
+### Read the sponsors:
 fname_sponsors = join(data['path'], data['sponsor_table'])
 
 if os.path.exists(fname_sponsors):
@@ -100,7 +121,7 @@ with io.open(join(data['render_path'], 'index.html'),
 # 2) List of articles:
 template = env.get_template('article_list.html')
 
-with io.open(join(data['render_path'],'article_list.html'),
+with io.open(join(data['render_path'], 'article_list.html'),
              'w', encoding='utf-8') as out:
     out.write(template.render(config_vars, root_path='.'))
 
@@ -125,5 +146,10 @@ for top in topics:
         out.write(template.render(config_vars, topic=top,
                                   articles=topics[top], root_path='..'))
 
+# 5) List of authors:
+template = env.get_template('author_list.html')
 
+with io.open(join(data['render_path'], 'author_list.html'),
+             'w', encoding='utf-8') as out:
+    out.write(template.render(config_vars, root_path='.'))
 
