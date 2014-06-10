@@ -71,6 +71,30 @@ def read_articles(fname):
             yield item
 
 
+def read_sponsors(fname):
+    '''read CSV table of the sponsors
+    
+    Returns a list of dict, with 3 keys: 'name', 'url', 'logo'
+    '''
+    with io.open(fname, encoding='utf-8') as f:
+        c = csv.reader(utf_8_encoder(f))
+        
+        # 1) Read the headers
+        header = c.next()
+        assert header == ['name', 'url', 'logo']
+        
+        sponsors = []
+        for line in c:
+            if len(line) < 3: continue
+            sponsors.append({
+                'name': line[0].decode('utf-8'),
+                'url':  line[1].decode('utf-8'),
+                'logo': line[2].decode('utf-8'),
+                })
+        
+        return sponsors
+
+
 def read_sessions(fname):
     return []
 

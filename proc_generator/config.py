@@ -1,13 +1,24 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-""" Configuration of the proceedings generator
+"""Configuration of the proceedings generator
 
+* where to find data
 * parameters of the event (name, date, ...)
 """
 
 from __future__ import unicode_literals
 
-# Configuration dict
+### Main configuration parameters
+
+data = {}
+# Input data:
+data['path'] = '../SGE2014_data'
+data['sponsor_table'] = 'sponsors.csv'
+data['article_table'] = 'fichier_retravail_4juin2014.csv'
+# Output path:
+data['render_path'] = '../SGE2014_proceedings'
+
+
+### Event parameters dict
 c={}
 
 # language, for <html lang="xx"> attribute:

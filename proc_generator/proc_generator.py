@@ -12,22 +12,26 @@ import io
 import jinja2
 from jinja2 import Environment, FileSystemLoader
 
-from config import c as config_vars
-from data_reader import read_articles
+from data_reader import read_articles, read_sponsors
 
-render_path = '../SGE2014_proceedings'
-data_path = '../SGE2014_data'
+### Read configuration
+config = {}
+execfile('config.py', {}, config)
+
+config_vars = config['c']
+data = config['data']
+
 
 ### Read and process the list of articles
-articles = list(read_articles(join(data_path,
-                              'fichier_retravail_4juin2014.csv')) )
+articles = list(read_articles(join(data['path'], data['article_table'])) )
 header, articles = articles[0], articles[1:]
 
 # sort articles list by first author
 articles.sort(key= lambda item: item['authors'])
 config_vars['articles'] = articles
 
-print('{:d} articles read from table ""'.format(len(articles)))
+print('{:d} articles read from table "{}"'.format(len(articles),
+                                                data['article_table']))
 
 
 # build topic -> [articles] mapping:
@@ -56,6 +60,18 @@ authors = {}
 
 config_vars['authors'] = {}
 
+# Read the sponsors:
+fname_sponsors = join(data['path'], data['sponsor_table'])
+
+if os.path.exists(fname_sponsors):
+    sponsors  = read_sponsors(fname_sponsors)
+    print('{:d} sponsors found'.format(len(sponsors)))
+else:
+    sponsors = []
+    print('No sponsors')
+
+config_vars['sponsors'] = sponsors
+
 
 ### Write web pages:
 
@@ -68,14 +84,14 @@ env.globals['topics_code'] = topics_code
 # 1) Index page:
 template = env.get_template('index.html')
 
-with io.open(join(render_path, 'index.html'),
+with io.open(join(data['render_path'], 'index.html'),
              'w', encoding='utf-8') as out:
     out.write(template.render(config_vars, root_path='.'))
 
 # 2) List of articles:
 template = env.get_template('article_list.html')
 
-with io.open(join(render_path,'article_list.html'),
+with io.open(join(data['render_path'],'article_list.html'),
              'w', encoding='utf-8') as out:
     out.write(template.render(config_vars, root_path='.'))
 
@@ -85,7 +101,7 @@ template = env.get_template('article_detail.html')
 for art in articles:
     fname = 'article_{:s}.html'.format(art['docid'])
     #print(fname)
-    with io.open(join(render_path, 'articles', fname),
+    with io.open(join(data['render_path'], 'articles', fname),
                  'w', encoding='utf-8') as out:
         out.write(template.render(config_vars, article=art, root_path='..'))
 
@@ -95,7 +111,7 @@ template = env.get_template('topic_detail.html')
 for top in topics:
     fname = 'topic_{}.html'.format(topics_code[top])
     print(fname)
-    with io.open(join(render_path, 'topics', fname),
+    with io.open(join(data['render_path'], 'topics', fname),
                  'w', encoding='utf-8') as out:
         out.write(template.render(config_vars, topic=top,
                                   articles=topics[top], root_path='..'))
