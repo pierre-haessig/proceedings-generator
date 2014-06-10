@@ -7,7 +7,8 @@
   <title>{% block title %}Actes de la conférence{% endblock %} - {{ event_name }} </title>
   <meta name="description" content="Actes de la conférence {{ event_name }}">
   <meta name="author" content="organisateurs {{ event_name }}">
-
+  <meta name="viewport" content="width=device-width">
+  
   <link rel="stylesheet" href="{{ root_path }}/style.css">
 </head>
 
@@ -29,11 +30,11 @@
   ] -%}
   {% set active_page = active_page|default('') -%}
   <nav>
-    {% for href, caption in navigation_bar %}
+    {% for href, caption in navigation_bar -%}
     <a href="{{ root_path }}/{{ href }}" {%
      if href == active_page %} class="active"{%
      endif %}>{{ caption }}</a>
-    {% endfor %}
+    {%- endfor %}
   </nav>
   {% endblock header %}
 </header>

@@ -2,13 +2,13 @@
 
 {% block title %}Fiche article {{ article.authors_etal }}{% endblock title %}
 {% block content %}
-
-  <p class='download-pdf'>
-    <a href='article_{{article.docid}}.pdf'>
-    <img src='pdf_icon.png' alt='pdf icon'> <br>
-    Article PDF
-    </a>
-  </p>
+  
+  <a href='article_{{article.docid}}.pdf'>
+  <div class='download-pdf'>
+    <img src='pdf_icon.png' alt='pdf icon'>
+    <p>Article PDF</p>
+  </div>
+  </a>
   
   <section class='article-info'>
   <h1>{{ article.title }}</h1>
