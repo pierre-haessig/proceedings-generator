@@ -13,7 +13,7 @@ import io
 import jinja2
 from jinja2 import Environment, FileSystemLoader
 
-from data_reader import read_articles, read_sponsors
+from data_reader import read_articles, read_sponsors, read_sessions
 
 ### Read configuration
 config = {}
@@ -69,11 +69,24 @@ for art in articles:
     # Append article to its session:
     sessions[s_id].append(art)
 
+# Read session description
+fname_sessions = join(data['path'], data['session_table'])
+
+sessions_details = read_sessions(fname_sessions)
+
+# Check that each session used in article table has a description:
+for ss in sessions:
+    assert ss in sessions_details
+
+# put empty list of articles for unused sessions
+for ss in sessions_details:
+    if ss not in sessions:
+        sessions[ss] = []
+
 print('\nSessions stats:')
 for s_id in sorted(sessions):
     n_art = len(sessions[s_id])
     print(' - "{}": {:d} article(s)'.format(s_id, n_art))
-
 
 ### build author -> [articles] mapping:
 authors = {}
