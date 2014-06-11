@@ -45,7 +45,7 @@ for art in articles:
     # Append article to its topic:
     topics[top].append(art)
 
-print('topics stats:')
+print('\nTopics stats:')
 for top in sorted(topics):
     n_art = len(topics[top])
     n_poster = len([art for art in topics[top] if art['media'] == 'poster'])
@@ -58,6 +58,21 @@ topics_code = {top: '{:03d}'.format(idx)
                for idx, top in enumerate(sorted(topics))}
 
 config_vars['topics'] = topics
+
+### build session -> [articles] mapping:
+sessions = {}
+
+for art in articles:
+    s_id = art['id_session']
+    if s_id not in sessions:
+        sessions[s_id] = []
+    # Append article to its session:
+    sessions[s_id].append(art)
+
+print('\nSessions stats:')
+for s_id in sorted(sessions):
+    n_art = len(sessions[s_id])
+    print(' - "{}": {:d} article(s)'.format(s_id, n_art))
 
 
 ### build author -> [articles] mapping:
@@ -80,11 +95,13 @@ for auth in sorted(authors.keys()):
         author_index[letter] = auth
 
 
-print('authors stats:')
+print('\nAuthors stats:')
 print('{:d} authors found'.format(len(authors)))
 
 config_vars['authors']      = authors
 config_vars['author_index'] = author_index
+
+
 
 ### Read the sponsors:
 fname_sponsors = join(data['path'], data['sponsor_table'])

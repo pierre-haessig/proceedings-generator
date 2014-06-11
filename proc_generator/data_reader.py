@@ -9,6 +9,7 @@ from __future__ import division, print_function
 import io
 import csv
 import re
+import datetime
 
 
 def utf_8_encoder(unicode_csv_data):
@@ -80,7 +81,7 @@ def read_sponsors(fname):
         
         sponsors = []
         for line in c:
-            if len(line) < 3: continue
+            if len(line) < len(header): continue
             sponsors.append({
                 'name': line[0].decode('utf-8'),
                 'url':  line[1].decode('utf-8'),
@@ -89,9 +90,42 @@ def read_sponsors(fname):
         
         return sponsors
 
+def decode_hour(s):
+    'decode "11:30" into (11, 30)'
+    h,m = s.split(':')
+    return int(h), int(m)
+
+def decode_date(s):
+    d,m,y = s.split('/')
+    return datetime.date(int(y), int(m), int(d))
 
 def read_sessions(fname):
-    return []
+    '''read CSV table of the sessions description
+    
+    Returns a dict of session dict
+     'session_id' -> {'name': 'session name', 'location': 'some place', 'date': ....}
+    '''
+    with io.open(fname, encoding='utf-8') as f:
+        c = csv.reader(utf_8_encoder(f))
+        
+        # 1) Read the headers
+        header = c.next()
+        assert header == ['id', 'name', 'location', 'date', 'begin', 'end', 'chairmen']
+        
+        sessions = {}
+        for line in c:
+            if len(line) < len(header): continue
+            details = {head: line[idx].decode('utf-8') for idx, head in enumerate(header)}
+            s_id = details['id']
+            del details['id']
+            
+            details['date'] = decode_date(details['date'])
+            details['begin'] = decode_hour(details['begin'])
+            details['end'] = decode_hour(details['end'])
+            
+            sessions[s_id] = details
+
+        return sessions
 
 if __name__ == '__main__':
     # Example:
