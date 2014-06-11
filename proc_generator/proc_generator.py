@@ -51,7 +51,7 @@ for top in sorted(topics):
     n_poster = len([art for art in topics[top] if art['media'] == 'poster'])
     n_oral = len([art for art in topics[top] if art['media'] == 'oral'])
     print(' - "{}": {:d} article(s)'.format(top, n_art), end=' ')
-    print('({:d} oral presentations, {:d} posters)'.format(n_oral, n_poster))
+    print('({:d} orals, {:d} posters)'.format(n_oral, n_poster))
 
 # build topic codes:
 topics_code = {top: '{:03d}'.format(idx)
@@ -87,6 +87,8 @@ print('\nSessions stats:')
 for s_id in sorted(sessions):
     n_art = len(sessions[s_id])
     print(' - "{}": {:d} article(s)'.format(s_id, n_art))
+
+config_vars['sessions'] = sessions
 
 ### build author -> [articles] mapping:
 authors = {}
@@ -144,6 +146,7 @@ templ_path = os.path.dirname(__file__)
 loader =  FileSystemLoader(templ_path)
 env = Environment(loader=loader, undefined=jinja2.StrictUndefined)
 env.globals['topics_code'] = topics_code
+env.globals['sessions_details'] = sessions_details
 
 # 1) Index page:
 template = env.get_template('index.html')
@@ -184,6 +187,13 @@ for top in topics:
 template = env.get_template('author_list.html')
 
 with io.open(join(data['render_path'], 'author_list.html'),
+             'w', encoding='utf-8') as out:
+    out.write(template.render(config_vars, root_path='.'))
+
+# 6a) List of sessions
+template = env.get_template('session_list.html')
+
+with io.open(join(data['render_path'], 'session_list.html'),
              'w', encoding='utf-8') as out:
     out.write(template.render(config_vars, root_path='.'))
 

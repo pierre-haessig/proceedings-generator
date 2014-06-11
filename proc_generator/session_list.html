@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% set active_page = "article_list.html" -%}
+
+{% block title %}Liste des sessions{% endblock title %}
+{% block content %}
+  <h1>Liste des sessions</h1>
+
+  <ul class="session-list">
+    {% for s_id in sessions%}
+    <li><a href='{{ root_path }}/sessions/session_{{ s_id }}.html'>{{ sessions_details[s_id]['name'] }}</a></li>
+    {% endfor %}
+  </ol>
+
+{% endblock content %}
+
