@@ -13,7 +13,7 @@ data = {}
 # Input data:
 data['path'] = '../SGE2014_data'
 data['sponsor_table'] = 'sponsors.csv'
-data['article_table'] = 'fichier_retravail_4juin2014.csv'
+data['article_table'] = 'bilan_papiers_programme_11juin.csv'
 # Output path:
 data['render_path'] = '../SGE2014_proceedings'
 

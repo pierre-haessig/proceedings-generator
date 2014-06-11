@@ -17,8 +17,8 @@
     {{ title_link(art, root_path) }}
     <br>
     Topic 
-    <a href="{{ root_path }}/topics/topic_{{ topics_code.get(art.topics) }}.html">
-        {{ art.topics }}</a>,
+    <a href="{{ root_path }}/topics/topic_{{ topics_code.get(art.topic) }}.html">
+        {{ art.topic }}</a>,
     Session
         {{ art.id_session}},
     {{ pdf(art, root_path) }}
@@ -39,8 +39,8 @@
     <br>
     <!-- 
     <strong>Topic</strong> :
-    <a href="{{ root_path }}/topics/topic_{{ topics_code.get(art.topics) }}.html">
-        {{ art.topics }}</a>,
+    <a href="{{ root_path }}/topics/topic_{{ topics_code.get(art.topic) }}.html">
+        {{ art.topic }}</a>,
     -->
     <strong>Session</strong> : {{ art.id_session}}
     <br>

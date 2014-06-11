@@ -33,15 +33,10 @@ def read_articles(fname):
         
         for line in c:
             item = {head: line[idx].decode('utf-8') for idx, head in enumerate(header)}
-            if item['type'] != u'FULLTEXT': #or \
-               #item['statut'] != u'Accepté':
-                # filters out the ABSTRACT contributions
-                # or not yet accepted papers
-                continue
             
             # Manually fill blanks:
-            if item['topics'] == '':
-                item['topics'] = 'no topic'
+            if item['topic'] == '':
+                item['topic'] = 'no topic'
             if item['id_session'] == '':
                 item['id_session'] = 'SO-XX-X'
             
@@ -100,7 +95,7 @@ def read_sessions(fname):
 
 if __name__ == '__main__':
     # Example:
-    articles = read_articles('../SGE2014_data/fichier_retravail_4juin2014.csv')
+    articles = read_articles('../SGE2014_data/bilan_papiers_programme_11juin.csv')
     articles = list(articles)
     
     header, articles = articles[0], articles[1:]

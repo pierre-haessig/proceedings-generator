@@ -39,15 +39,19 @@ print('{:d} articles read from table "{}"'.format(len(articles),
 topics = {}
 
 for art in articles:
-    top = art['topics']
+    top = art['topic']
     if top not in topics:
         topics[top] = []
     # Append article to its topic:
     topics[top].append(art)
 
 print('topics stats:')
-for top in topics:
-    print(' * "{}": {:d} article(s)'.format(top, len(topics[top])))
+for top in sorted(topics):
+    n_art = len(topics[top])
+    n_poster = len([art for art in topics[top] if art['media'] == 'poster'])
+    n_oral = len([art for art in topics[top] if art['media'] == 'oral'])
+    print(' - "{}": {:d} article(s)'.format(top, n_art), end=' ')
+    print('({:d} oral presentations, {:d} posters)'.format(n_oral, n_poster))
 
 # build topic codes:
 topics_code = {top: '{:03d}'.format(idx)
