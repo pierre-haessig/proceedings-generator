@@ -6,6 +6,8 @@
   <meta charset="utf-8">
   
   <title>Programme détaillé {{ event_name }}</title>
+  
+  <link rel="stylesheet" href="{{ root_path }}/style-program.css">
 </head>
 
 <body>
@@ -17,12 +19,13 @@
 <h2 class='day'>{{ day.strftime('%A %d %B %Y') }}</h2>
 
 {% for (begin, end), s_group in day_group|dictsort %}
-  <h3> {{ begin.strftime('%Hh%M') }} — {{ end.strftime('%Hh%M') }} </h3>
-  {% for s_id in s_group%}
-    <h4>{{ sessions_details[s_id]['name'] }} {{ s_id }}</h4>
-        <ul>
+  <h3 class='hours'> {{ begin.strftime('%Hh%M') }} — {{ end.strftime('%Hh%M') }} </h3>
+  {% for s_id, ss in s_group|dictsort %}
+    <h4 class='session-name'> {{ ss.type|title }} {{ s_id }} : {{ ss.name }}</h4>
+        <h5 class='location'>{{ ss.location}}</h5>
+        <ol class='article-list'>
         {% for art in sessions[s_id] %}
-          <li>
+          <li class='article'>
             <span class="authors">{{ art.authors}}</span>
             <br>
             <em class="article-title">"{{ art.title}}"</em>
@@ -30,7 +33,7 @@
             <small class="article-affil">{{ art.labos}}</small>
           </li>
         {% endfor %}
-        </ul>
+        </ol>
     {% endfor %}
   {% endfor %}
 {% endfor %}

@@ -1,0 +1,22 @@
+body {
+  font-family: sans;
+
+}
+
+h2,h3,h4, h5 {
+  text-align: center;
+}
+
+h2.day {
+  background-color:#003272;
+  color:white;
+  padding: 10px;
+}
+
+li.article {
+  padding: 0.5em 0;
+}
+
+.authors {
+  color: #004bab;
+}
