@@ -75,13 +75,28 @@ fname_sessions = join(data['path'], data['session_table'])
 sessions_details = read_sessions(fname_sessions)
 
 # Check that each session used in article table has a description:
-for ss in sessions:
-    assert ss in sessions_details
+for s_id in sessions:
+    assert s_id in sessions_details
 
 # put empty list of articles for unused sessions
-for ss in sessions_details:
-    if ss not in sessions:
-        sessions[ss] = []
+for s_id in sessions_details:
+    if s_id not in sessions:
+        sessions[s_id] = []
+
+# Build the sessions groups (synchronous sessions)
+sessions_groups = {}
+for s_id in sessions_details:
+    s_date = sessions_details[s_id]['date']
+    s_begin = sessions_details[s_id]['begin']
+    s_end = sessions_details[s_id]['end']
+
+    if s_date not in sessions_groups:
+        sessions_groups[s_date] = {}
+    if (s_begin, s_end) not in sessions_groups[s_date]:
+        sessions_groups[s_date][s_begin, s_end] = {}
+
+    sessions_groups[s_date][s_begin, s_end][s_id] = sessions_details[s_id]
+
 
 print('\nSessions stats:')
 for s_id in sorted(sessions):
@@ -89,6 +104,8 @@ for s_id in sorted(sessions):
     print(' - "{}": {:d} article(s)'.format(s_id, n_art))
 
 config_vars['sessions'] = sessions
+config_vars['sessions_groups'] = sessions_groups
+
 
 ### build author -> [articles] mapping:
 authors = {}

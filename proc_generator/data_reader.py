@@ -119,10 +119,15 @@ def read_sessions(fname):
             s_id = details['id']
             del details['id']
             
-            details['date'] = decode_date(details['date'])
-            details['begin'] = decode_hour(details['begin'])
-            details['end'] = decode_hour(details['end'])
-            
+            day = decode_date(details['date'])
+            details['date'] = day
+            h,m = decode_hour(details['begin'])
+            details['begin'] = datetime.datetime(
+                day.year, day.month, day.day, h, m)
+            h,m = decode_hour(details['end'])
+            details['end'] = datetime.datetime(
+                day.year, day.month, day.day, h, m)
+
             sessions[s_id] = details
 
         return sessions

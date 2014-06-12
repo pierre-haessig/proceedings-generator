@@ -1,15 +1,26 @@
 {% extends "base.html" %}
 {% set active_page = "article_list.html" -%}
 
-{% block title %}Liste des sessions{% endblock title %}
+{% block title %}Programme des session{% endblock title %}
 {% block content %}
-  <h1>Liste des sessions</h1>
+  <h1>Programme des sessions</h1>
 
-  <ul class="session-list">
-    {% for s_id in sessions%}
-    <li><a href='{{ root_path }}/sessions/session_{{ s_id }}.html'>{{ sessions_details[s_id]['name'] }}</a></li>
+  {% for day, day_group in sessions_groups|dictsort %}
+    <h2 class='day'>{{ day.strftime('%A %d %B %Y') }}</h2>
+
+    <ul class="session-group-list">
+    {% for (begin, end), s_group in day_group|dictsort %}
+      <li> {{ begin.strftime('%Hh%M') }} — {{ end.strftime('%Hh%M') }}
+      <ul class="session-list">
+        {% for s_id in s_group%}
+        <li><a href='{{ root_path }}/sessions/session_{{ s_id }}.html'>{{ sessions_details[s_id]['name'] }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      </li>
     {% endfor %}
-  </ol>
+    </ul>
+  {% endfor %}
 
 {% endblock content %}
 
