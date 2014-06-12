@@ -8,15 +8,22 @@
   {% for day, day_group in sessions_groups|dictsort %}
     <h2 class='day'>{{ day.strftime('%A %d %B %Y') }}</h2>
 
-    <ul class="session-group-list">
+    <ul class='session-group-list'>
     {% for (begin, end), s_group in day_group|dictsort %}
-      <li> {{ begin.strftime('%Hh%M') }} — {{ end.strftime('%Hh%M') }}
-      <ul class="session-list">
-        {% for s_id in s_group%}
-        <li><a href='{{ root_path }}/sessions/session_{{ s_id }}.html'>{{ sessions_details[s_id]['name'] }}</a>
-        </li>
-        {% endfor %}
-      </ul>
+      <li class='session-group'>
+        <span class='hours'> {{ begin.strftime('%Hh%M') }} — {{ end.strftime('%Hh%M') }} </span>
+        <ul class='session-list'>
+          {% for s_id, ss in s_group|dictsort %}
+          <li>
+          <a href='{{ root_path }}/sessions/session_{{ s_id }}.html'>
+          <div class='session-box {{ ss.type }}'>
+            <span class='session-name'>{{ ss.name }}</span>
+            <small class='location'>{{ ss.location }}</small>
+          </div>
+          </a>
+          </li>
+          {% endfor %}
+        </ul>
       </li>
     {% endfor %}
     </ul>

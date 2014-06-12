@@ -262,3 +262,72 @@ ul.author_list em.article-title {
   font-size: 0.8em;
 }
 
+
+/*** List of all sessions***/
+h2.day {
+  clear: both;
+}
+
+ul.session-group-list {
+  padding-left: 0;
+}
+ul.session-group-list > li {
+  list-style-type: none;
+  display:block;
+  overflow: hidden;
+  clear:both;
+  margin: 1em 0;
+}
+
+
+ul.session-list {
+  padding-left: 0;
+}
+
+ul.session-list > li {
+  list-style-type: none;
+  display: block;
+  float: left;
+  margin: 5px 0px;
+
+}
+
+.session-box {
+  display: table-cell;
+  width: 150px;
+  height: 80px;
+  text-align: center;
+  vertical-align: middle;
+  color: black;
+}
+
+.session-box:hover {
+  /*background-color: #eee;*/
+  border: solid rgba(0, 0, 0, 0.5) 1px;
+  width: 148px;
+  height: 78px;
+}
+
+.session-box small.location {
+  display:block;
+  margin-top:0.5em;
+  font-style: italic;
+}
+
+/* box colors */
+div.plénière {
+  background-color: #92d050; /*green*/
+}
+
+div.orale {
+  background-color: #ccc0da; /*purple*/
+}
+
+div.spéciale {
+  background-color: #d7e4bc; /*green*/
+}
+
+div.poster {
+  background-color: #8db4e3; /*blue*/
+}
+
