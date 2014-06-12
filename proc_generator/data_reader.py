@@ -33,7 +33,8 @@ def read_articles(fname):
         yield header
         
         for line in c:
-            item = {head: line[idx].decode('utf-8') for idx, head in enumerate(header)}
+            item = {head: line[idx].strip().decode('utf-8')
+                    for idx, head in enumerate(header)}
             
             # Manually fill blanks:
             if item['topic'] == '':
@@ -117,7 +118,6 @@ def read_sessions(fname):
             if len(line) < len(header): continue
             details = {head: line[idx].decode('utf-8') for idx, head in enumerate(header)}
             s_id = details['id']
-            del details['id']
             
             day = decode_date(details['date'])
             details['date'] = day

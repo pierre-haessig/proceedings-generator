@@ -221,3 +221,12 @@ with io.open(join(data['render_path'], 'session_program.html'),
              'w', encoding='utf-8') as out:
     out.write(template.render(config_vars, root_path='.'))
 
+# 6c) Detailed session pages
+template = env.get_template('session_detail.html')
+
+for s_id in sessions:
+    fname = 'session_{:s}.html'.format(s_id)
+    #print(fname)
+    with io.open(join(data['render_path'], 'sessions', fname),
+                 'w', encoding='utf-8') as out:
+        out.write(template.render(config_vars, session=sessions_details[s_id], root_path='..'))

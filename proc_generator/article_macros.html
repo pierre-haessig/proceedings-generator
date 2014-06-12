@@ -17,10 +17,11 @@
     {{ title_link(art, root_path) }}
     <br>
     Topic 
-    <a href="{{ root_path }}/topics/topic_{{ topics_code.get(art.topic) }}.html">
+    <a href="{{ root_path }}/topics/topic_{{ topics_code[art.topic] }}.html">
         {{ art.topic }}</a>,
     Session
-        {{ art.id_session}},
+    <a href="{{ root_path }}/sessions/session_{{ art.id_session }}.html">
+        {{ art.id_session}}</a>,
     {{ pdf(art, root_path) }}
     
   </li>

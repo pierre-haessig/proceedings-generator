@@ -27,7 +27,9 @@
     <strong>Topic</strong> :
     <a href="{{ root_path }}/topics/topic_{{ topics_code.get(article.topic) }}.html">
         {{ article.topic }}</a>
-    <strong>Session</strong> : {{ article.id_session }}
+    <strong>Session</strong> :
+    <a href="{{ root_path }}/sessions/session_{{ article.id_session }}.html">
+        {{ article.id_session}}</a>
     </p>
     
     <div class='abstract'>
