@@ -213,4 +213,11 @@ template = env.get_template('session_list.html')
 with io.open(join(data['render_path'], 'session_list.html'),
              'w', encoding='utf-8') as out:
     out.write(template.render(config_vars, root_path='.'))
+    
+# 6b) Complete programe of sessions (for printed booklet)
+template = env.get_template('session_program.html')
+
+with io.open(join(data['render_path'], 'session_program.html'),
+             'w', encoding='utf-8') as out:
+    out.write(template.render(config_vars, root_path='.'))
 

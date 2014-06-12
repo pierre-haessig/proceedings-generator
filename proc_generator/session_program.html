@@ -1,0 +1,39 @@
+{% import 'article_macros.html' as article_macros %}
+<!doctype html>
+
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  
+  <title>Programme détaillé {{ event_name }}</title>
+</head>
+
+<body>
+
+<h1>Programme détaillé</h1>
+(version brute de mise en forme, pour intégration dans un traitement de texte)
+
+{% for day, day_group in sessions_groups|dictsort %}
+<h2 class='day'>{{ day.strftime('%A %d %B %Y') }}</h2>
+
+{% for (begin, end), s_group in day_group|dictsort %}
+  <h3> {{ begin.strftime('%Hh%M') }} — {{ end.strftime('%Hh%M') }} </h3>
+  {% for s_id in s_group%}
+    <h4>{{ sessions_details[s_id]['name'] }} {{ s_id }}</h4>
+        <ul>
+        {% for art in sessions[s_id] %}
+          <li>
+            <span class="authors">{{ art.authors}}</span>
+            <br>
+            <em class="article-title">"{{ art.title}}"</em>
+            <br>
+            <small class="article-affil">{{ art.labos}}</small>
+          </li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+  {% endfor %}
+{% endfor %}
+
+</body>
+</html>
