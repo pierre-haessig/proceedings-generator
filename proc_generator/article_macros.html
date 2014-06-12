@@ -32,18 +32,20 @@
 {% macro list_details(articles, root_path) -%}
 {% for art in articles %}
   <li>
-    <span class="authors">{{ art.authors_no_affil }} </span> :
+    <span class="authors">{{ art.authors }} </span> :
     <br>
     {{ title_link(art, root_path) }}
     <br>
     <small class='article-affil'>{{ art.labos }}</small>
     <br>
-    <!-- 
+    
     <strong>Topic</strong> :
     <a href="{{ root_path }}/topics/topic_{{ topics_code.get(art.topic) }}.html">
         {{ art.topic }}</a>,
-    -->
-    <strong>Session</strong> : {{ art.id_session}}
+    
+    <strong>Session</strong> :
+    <a href="{{ root_path }}/sessions/session_{{ art.id_session }}.html">
+        {{ art.id_session}}</a>
     <br>
     {{ pdf(art, root_path) }}
   </li>
