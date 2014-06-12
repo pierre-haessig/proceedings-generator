@@ -265,7 +265,11 @@ ul.author_list em.article-title {
 
 /*** List of all sessions***/
 h2.day {
+  background-color:#777;
+  color:white;
   clear: both;
+  padding:7px 10px;
+  margin-top:2em;
 }
 
 ul.session-group-list {
@@ -276,27 +280,31 @@ ul.session-group-list > li {
   display:block;
   overflow: hidden;
   clear:both;
-  margin: 1em 0;
+  margin: 1.5em 0;
 }
 
 
 ul.session-list {
+  position:relative;
   padding-left: 0;
+  left:-10px;
 }
 
 ul.session-list > li {
   list-style-type: none;
   display: block;
   float: left;
-  margin: 5px 0px;
-
+  margin: 5px 10px;
+  text-align: center;
 }
+
 
 .session-box {
   display: table-cell;
-  width: 150px;
-  height: 80px;
-  text-align: center;
+  font-size: 0.9em;
+  padding: 10px;
+  width: 200px;
+  height: 110px;
   vertical-align: middle;
   color: black;
 }
@@ -304,30 +312,40 @@ ul.session-list > li {
 .session-box:hover {
   /*background-color: #eee;*/
   border: solid rgba(0, 0, 0, 0.5) 1px;
-  width: 148px;
-  height: 78px;
+  padding: 9px;
+}
+
+.session-type {
+  color: rgba(0,0,0,0.5);
+  text-decoration: none;
+  font-size: 0.8em;
 }
 
 .session-box small.location {
   display:block;
+  color: rgba(0,0,0,0.5);
   margin-top:0.5em;
   font-style: italic;
 }
 
 /* box colors */
-div.plénière {
+div.grand-amphi-marie-curie {
   background-color: #92d050; /*green*/
 }
 
-div.orale {
-  background-color: #ccc0da; /*purple*/
+div.amphi-tocqueville {
+  background-color: #c587d7; /*purple*/
 }
 
-div.spéciale {
-  background-color: #d7e4bc; /*green*/
+div.salle-condorcet {
+  background-color: #ff8bb3; /*rose*/
 }
 
-div.poster {
+div.amphi-fonteneau {
+  background-color: #fcaf3e; /*orange*/
+}
+
+div.hall-villon {
   background-color: #8db4e3; /*blue*/
 }
 

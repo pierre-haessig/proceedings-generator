@@ -15,8 +15,9 @@
         <ul class='session-list'>
           {% for s_id, ss in s_group|dictsort %}
           <li>
+          <div class='session-type'>{{ ss.type }}</div>
           <a href='{{ root_path }}/sessions/session_{{ s_id }}.html'>
-          <div class='session-box {{ ss.type }}'>
+          <div class='session-box {{ ss.location|lower|replace(' ','-') }}'>
             <span class='session-name'>{{ ss.name }}</span>
             <small class='location'>{{ ss.location }}</small>
           </div>
