@@ -5,14 +5,16 @@
 
 {% macro fmt_affil(affil) -%}
 {% if affil -%}
-<sup class='affil'>{{ affil|int_list_fmt|join(',') }}</sup>
+<sup class='article-affil'>{{ affil|int_list_fmt|join(',') }}</sup>
 {%- endif %}
 {%- endmacro %}
 
-{% macro authors_affil(authors_split) -%}
-<span class='authors'> {% for auth, affil in authors_split -%}
-  {{ auth }}{{ fmt_affil(affil) }}{{ ', ' if not loop.last else '' }}
-{%- endfor %} </span>
+{% macro authors(authors_split, root_path, with_affil=False) -%}
+<span class='article-authors'> {% for auth, affil in authors_split -%}
+  <a href="{{ root_path }}/author_list.html#{{auth}}">{{ auth }}</a>{{ 
+   fmt_affil(affil) if with_affil else ''}}{{
+   ', ' if not loop.last else '' }}
+{%- endfor %}</span>
 {%- endmacro %}
 
 {% macro pdf_href(art, root_path) -%}
@@ -23,7 +25,7 @@ href="{{ root_path }}/articles/article_{{ art.docid }}.pdf"
 {% macro list(articles, root_path) -%}
 {% for art in articles %}
   <li>
-    <span class='authors'>{{ art.authors_no_affil }}</span>.
+    {{ authors(art.authors_split, root_path) }}.
     <br>
     {{ title_link(art, root_path)|indent(4) }}
     <a {{ pdf_href(art, root_path) }} class='pdf'>PDF</a>
@@ -35,7 +37,7 @@ href="{{ root_path }}/articles/article_{{ art.docid }}.pdf"
 {% macro list_details(articles, root_path) -%}
 {% for art in articles %}
   <li>
-    {{ authors_affil(art.authors_split) }}
+    {{ authors(art.authors_split, root_path, with_affil=True) }}.
     <br>
     {{ title_link(art, root_path) }}
     <br>

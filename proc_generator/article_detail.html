@@ -14,7 +14,7 @@
   
     <p>
     <strong>Auteurs</strong> :
-    {{ article_macros.authors_affil(article.authors_split) }}
+    {{ article_macros.authors(article.authors_split, root_path, with_affil=True) }}
     </p>
     
     <p><small>

@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #header nav a:hover {
   color: #000;
-  background-color:#eee;
+  background-color:#F5F5F5;
 }
 #header nav a.active {
   font-weight: bold;
@@ -178,7 +178,11 @@ ul.sponsor_list span {
 }
 
 .article_list .article-title {
-  color: #12398a;
+  color: black;
+}
+
+.article-authors {
+  color: #1f59d3;
 }
 
 .article_list a.pdf {
@@ -194,7 +198,7 @@ ul.sponsor_list span {
 }
 
 .article_list a.pdf:hover {
-  background-color: #FEE;
+  background-color: #F5F5F5;
   text-decoration: none;
 }
 @media screen and (max-width: 600px) {
@@ -203,7 +207,7 @@ ul.sponsor_list span {
   }
   .article_list a.pdf {
     position:relative;
-    display:inline;
+    /*display:inline; */
     border: dotted 1px #CCC;
     text-align:center;
   }
@@ -218,7 +222,7 @@ ul.sponsor_list span {
   border: dotted 1px #CCC;
 }
 .download-pdf:hover {
-  background-color: #FEE;
+  background-color: #F5F5F5;
   text-decoration: none;
 }
 
