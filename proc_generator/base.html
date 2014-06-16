@@ -18,7 +18,7 @@
 <header id='header'>
   {% block header %}
   <img class='logo' src='{{ root_path }}/logo_sge.png' alt="logo SGE">
-  <h1 class='event-name'>{{ event_name }}</h1>
+  <h1 class='event-name'><a href='{{ event_website }}'>{{ event_name }}</a></h1>
   <h2 class='event-description'>{{ event_date }}, {{ event_location }}</h2>
   
   
@@ -46,7 +46,10 @@
 
 <footer id='footer'>
   {% block footer %}
-  <small>{{ event_name }}, {{ event_date }}, {{ event_location }}</small>
+  <a href='{{ event_website }}'>{{ event_name }}</a>,
+  {{ event_date }}, {{ event_location }}
+  <br>
+  <small class='credits'>mise en forme web : {{ website_credits }} </small>
   {% endblock footer %}
 </footer>
 </div>

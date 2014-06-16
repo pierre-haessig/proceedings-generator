@@ -1,29 +1,32 @@
 {% macro title_link(art, root_path) -%}
-<a href="{{ root_path }}/articles/article_{{ art.docid }}.html">
-<em class="article-title">"{{ art.title }}"</em>
-</a>
+<a class='article-title' href="{{ root_path }}/articles/article_{{ art.docid }}.html">
+<em class='article-title'>"{{ art.title }}"</em></a>
 {%- endmacro %}
 
-{% macro pdf(art, root_path) -%}
-<a href="{{ root_path }}/articles/article_{{ art.docid }}.pdf">article PDF</a>
+{% macro fmt_affil(affil) -%}
+{% if affil -%}
+<sup class='affil'>{{ affil|int_list_fmt|join(',') }}</sup>
+{%- endif %}
+{%- endmacro %}
+
+{% macro authors_affil(authors_split) -%}
+<span class='authors'> {% for auth, affil in authors_split -%}
+  {{ auth }}{{ fmt_affil(affil) }}{{ ', ' if not loop.last else '' }}
+{%- endfor %} </span>
+{%- endmacro %}
+
+{% macro pdf_href(art, root_path) -%}
+href="{{ root_path }}/articles/article_{{ art.docid }}.pdf"
 {%- endmacro %}
 
 
 {% macro list(articles, root_path) -%}
 {% for art in articles %}
   <li>
-    <span class="authors">{{ art.authors_no_affil }}</span>.
+    <span class='authors'>{{ art.authors_no_affil }}</span>.
     <br>
-    {{ title_link(art, root_path) }}
-    <br>
-    Topic 
-    <a href="{{ root_path }}/topics/topic_{{ topics_code[art.topic] }}.html">
-        {{ art.topic }}</a>,
-    Session
-    <a href="{{ root_path }}/sessions/session_{{ art.id_session }}.html">
-        {{ art.id_session}}</a>,
-    {{ pdf(art, root_path) }}
-    
+    {{ title_link(art, root_path)|indent(4) }}
+    <a {{ pdf_href(art, root_path) }} class='pdf'>PDF</a>
   </li>
 {% endfor %}
 {%- endmacro %}
@@ -32,22 +35,24 @@
 {% macro list_details(articles, root_path) -%}
 {% for art in articles %}
   <li>
-    <span class="authors">{{ art.authors }} </span> :
+    {{ authors_affil(art.authors_split) }}
     <br>
     {{ title_link(art, root_path) }}
     <br>
+    
+    {% if art.labos %}
     <small class='article-affil'>{{ art.labos }}</small>
     <br>
+    {% endif %}
     
-    <strong>Topic</strong> :
+    <strong>Thématique</strong> :
     <a href="{{ root_path }}/topics/topic_{{ topics_code.get(art.topic) }}.html">
         {{ art.topic }}</a>,
     
     <strong>Session</strong> :
     <a href="{{ root_path }}/sessions/session_{{ art.id_session }}.html">
         {{ art.id_session}}</a>
-    <br>
-    {{ pdf(art, root_path) }}
+    <a {{ pdf_href(art, root_path) }} class='pdf'>PDF</a>
   </li>
 {% endfor %}
 {%- endmacro %}

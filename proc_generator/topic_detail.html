@@ -3,9 +3,11 @@
 {% block title %}Topic "{{ topic }}"{% endblock title %}
 {% block content %}
 
-  <h1>Topic "{{ topic }}"</h1>
+  <h1>Thématique "{{ topic }}"</h1>
     
+    <p>
     {{articles|count}} articles dans cette thématique :
+    </p>
     
     {% import 'article_macros.html' as article_macros %}
     <ul class="article_list">

@@ -10,7 +10,12 @@
     <li><a href='author_list.html'>Les auteurs</a></li>
   </ul>
   
-  <h2>Topics</h2>
+  <p>
+  Site internet de la conférence :
+  <a href='{{ event_website }}'>{{ event_website }}</a>
+  </p>
+  
+  <h2>Thématiques</h2>
   
   <ul>
   {% for top, art_list in topics|dictsort %}
@@ -33,5 +38,5 @@
     </li>
   {% endfor %}
   </ul>
-  
+
 {% endblock content %}

@@ -1,48 +1,47 @@
 {% extends "base.html" %}
+{% import 'article_macros.html' as article_macros %}
 
 {% block title %}Fiche article {{ article.authors_etal }}{% endblock title %}
 {% block content %}
   
-  <a href='article_{{article.docid}}.pdf'>
-  <div class='download-pdf'>
+  <a {{ article_macros.pdf_href(article, root_path) }} class='download-pdf'>
     <img src='pdf_icon.png' alt='pdf icon'>
     <p>Article PDF</p>
-  </div>
   </a>
   
   <section class='article-info'>
   <h1>{{ article.title }}</h1>
   
     <p>
-    Auteurs :
-    {{ article.authors }}
+    <strong>Auteurs</strong> :
+    {{ article_macros.authors_affil(article.authors_split) }}
     </p>
     
     <p><small>
-    Affiliations :
+    <strong>Affiliations</strong> :
     {{ article.labos }}
     </small></p>
     
     <p>
-    <strong>Topic</strong> :
+    <strong>Thématique</strong> :
     <a href="{{ root_path }}/topics/topic_{{ topics_code.get(article.topic) }}.html">
         {{ article.topic }}</a>
+    <br>
     <strong>Session</strong> :
     <a href="{{ root_path }}/sessions/session_{{ article.id_session }}.html">
-        {{ article.id_session}}</a>
+        {{ article.id_session }} "{{ sessions_details[article.id_session].name}}"</a>
     </p>
     
+    {% if article.abstract %}
     <div class='abstract'>
       <h3>Résumé</h3>
       <p>
       {{ article.abstract }}
       </p>
     </div>
+    {% endif %}
 
   </section>
-  
-  <nav>
-  <a href='../article_list.html'> Retour à la liste des contributions</a>
-  </nav>
+
 {% endblock content %}
 

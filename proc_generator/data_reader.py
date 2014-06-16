@@ -49,7 +49,7 @@ def read_articles(fname):
             for auth in authors:
                 # Affiliation(s):
                 affil = re_affil.findall(auth)
-                affil = [int(ai)-1 for ai in affil]
+                affil = [int(ai) for ai in affil]
                 # Author name:
                 name, count = re_affil.subn('', auth)
                 assert len(affil) == count
@@ -134,7 +134,7 @@ def read_sessions(fname):
 
 if __name__ == '__main__':
     # Example:
-    articles = read_articles('../SGE2014_data/bilan_papiers_programme_11juin.csv')
+    articles = read_articles('../SGE2014_data/bilan_papiers_programme.csv')
     articles = list(articles)
     
     header, articles = articles[0], articles[1:]

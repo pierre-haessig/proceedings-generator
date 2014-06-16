@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Session {{ session.name }}{% endblock title %}
+{% block content %}
+
+  <h1>Session "{{ session.name }}" <small>({{ session.id }})</small></h1>
+  
+  <p class='session-info {{ session.location|lower|replace(' ','-') }}'>
+  {{ session.date.strftime('%A %d %B %Y') }},
+  {{ session.begin.strftime('%Hh%M') }} — {{ session.end.strftime('%Hh%M') }},
+  <strong>{{ session.location }}</strong>
+  <br>
+  <small class='session-type'>{{ session.type }} </small>
+  </p>
+  
+  <p>
+  <strong>Chairmen</strong> : {{ session.chairmen }}
+  </p>
+  
+  <p>
+  {{sessions[session.id]|count}} articles dans cette session :
+  </p>
+  
+  {% import 'article_macros.html' as article_macros %}
+    <ul class="article_list">
+    {{ article_macros.list_details(sessions[session.id], root_path) }}
+    </ul>
+  
+  <nav>
+  <a href='../session_list.html'>Retour à la liste des sessions</a>
+  </nav>
+  
+{% endblock content %}
+

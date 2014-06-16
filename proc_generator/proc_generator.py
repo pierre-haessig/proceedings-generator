@@ -164,6 +164,9 @@ loader =  FileSystemLoader(templ_path)
 env = Environment(loader=loader, undefined=jinja2.StrictUndefined)
 env.globals['topics_code'] = topics_code
 env.globals['sessions_details'] = sessions_details
+# filters:
+# convert list of integers to list of strings
+env.filters['int_list_fmt'] = lambda ls:['{:d}'.format(a) for a in ls]
 
 # 1) Index page:
 template = env.get_template('index.html')
