@@ -1,33 +1,33 @@
 id,type,name,location,date,begin,end,chairmen
-K1,session plénière,Plénière 1,Grand amphi Marie Curie,08/07/2014,11:00,11:45,"Multon Bernard, Ben Ahmed Hamid"
-K2,session plénière,Plénière 2,Grand amphi Marie Curie,08/07/2014,11:45,12:30,"Multon Bernard, Ben Ahmed Hamid"
-K3,session plénière,Plénière 3,Grand amphi Marie Curie,09/07/2014,09:00,10:00,"Multon Bernard, Ben Ahmed Hamid"
-K4,session plénière,Plénière 4,Grand amphi Marie Curie,10/07/2014,08:30,09:30,"Multon Bernard, Ben Ahmed Hamid"
-SO-J1-A,session orale,Thermique des composants et systèmes électronique de puissance,Grand amphi Marie Curie,08/07/2014,15:30,18:00,"Multon Bernard, Ben Ahmed Hamid"
-SO-J1-B,session orale,Dispositifs EM et actionneurs spéciaux,Amphi Tocqueville,08/07/2014,15:30,18:00,"Multon Bernard, Ben Ahmed Hamid"
-SO-J1-C,session orale,Matériaux magnétiques et conducteurs,Salle Condorcet,08/07/2014,15:30,18:00,"Multon Bernard, Ben Ahmed Hamid"
-SO-J2am-A,session orale,Contraintes d'usage,Salle Condorcet,09/07/2014,10:30,13:00,"Multon Bernard, Ben Ahmed Hamid"
-SO-J2am-B,session orale,Systèmes d'énergie/Transport,Grand amphi Marie Curie,09/07/2014,10:30,13:00,"Multon Bernard, Ben Ahmed Hamid"
-SO-J2am-C,session orale,Matériaux Diélectriques et systèmes d'isolation,Amphi Tocqueville,09/07/2014,10:30,13:00,"Multon Bernard, Ben Ahmed Hamid"
-SO-J2pm-A,session orale,Intégration de puissance et architecture,Amphi Tocqueville,09/07/2014,16:00,18:30,"Multon Bernard, Ben Ahmed Hamid"
-SO-J2pm-B,session orale,Systèmes Energies Renouvelables/Réseau,Salle Condorcet,09/07/2014,16:00,18:30,"Multon Bernard, Ben Ahmed Hamid"
-SO-J2pm-C,session orale,Méthodes et méthodologies en GE,Grand amphi Marie Curie,09/07/2014,16:00,18:30,"Multon Bernard, Ben Ahmed Hamid"
-SO-J3-A,session orale,Composants semi-conducteurs,Grand amphi Marie Curie,10/07/2014,11:00,13:00,"Multon Bernard, Ben Ahmed Hamid"
-SO-J3-B,session orale,Contrôle/Diagnostic,Amphi Tocqueville,10/07/2014,11:00,13:00,"Multon Bernard, Ben Ahmed Hamid"
-SO-J3-C,session orale,Systèmes de stockage/Piles à combustible,Salle Condorcet,10/07/2014,11:00,13:00,"Multon Bernard, Ben Ahmed Hamid"
-SP-J1-A,session poster,Thermique des composants et systèmes électronique de puissance,Hall Villon,08/07/2014,14:00,15:00,"Multon Bernard, Ben Ahmed Hamid"
-SP-J1-B,session poster,Dispositifs EM et actionneurs spéciaux,Hall Villon,08/07/2014,14:00,15:00,"Multon Bernard, Ben Ahmed Hamid"
-SP-J1-C,session poster,Matériaux magnétiques et conducteurs,Hall Villon,08/07/2014,14:00,15:00,"Multon Bernard, Ben Ahmed Hamid"
-SP-J2-A,session poster,Contraintes d'usage,Hall Villon,09/07/2014,14:30,15:30,"Multon Bernard, Ben Ahmed Hamid"
-SP-J2-B,session poster,Intégration de puissance et architecture,Hall Villon,09/07/2014,14:30,15:30,"Multon Bernard, Ben Ahmed Hamid"
-SP-J2-C,session poster,Matériaux Diélectriques et systèmes d'isolation,Hall Villon,09/07/2014,14:30,15:30,"Multon Bernard, Ben Ahmed Hamid"
-SP-J2-D,session poster,Systèmes d'énergie/Transport,Hall Villon,09/07/2014,14:30,15:30,"Multon Bernard, Ben Ahmed Hamid"
-SP-J2-E,session poster,Systèmes Energies Renouvelables/Réseau,Hall Villon,09/07/2014,14:30,15:30,"Multon Bernard, Ben Ahmed Hamid"
-SP-J3-A,session poster,Composants semi-conducteurs,Hall Villon,10/07/2014,09:30,10:30,"Multon Bernard, Ben Ahmed Hamid"
-SP-J3-B,session poster,Contrôle/Diagnostic,Hall Villon,10/07/2014,09:30,10:30,"Multon Bernard, Ben Ahmed Hamid"
-SP-J3-C,session poster,Méthodes et méthodologies en GE,Hall Villon,10/07/2014,09:30,10:30,"Multon Bernard, Ben Ahmed Hamid"
-SP-J3-D,session poster,Systèmes de stockage/Piles à combustible,Hall Villon,10/07/2014,09:30,10:30,"Multon Bernard, Ben Ahmed Hamid"
-SS-J1,session spéciale,Session spéciale GE et Mathématiques appliquées,Amphi Fonteneau,08/07/2014,15:30,18:00,Stéphane CLENET
-SS-J2am,session spéciale,Session spéciale GE et Biologie/santé,Amphi Fonteneau,09/07/2014,10:30,13:00,Emmanuel ODIC
-SS-J2pm,session spéciale,Session spéciale GE et Mécanique,Amphi Fonteneau,09/07/2014,16:00,18:30,Laurent DANIEL
-SS-J3,session spéciale,Session spéciale GE et Physique,Amphi Fonteneau,10/07/2014,11:00,13:00,Eric LABOURE
+K1,session plénière,Plénière 1,Grand amphi Marie Curie,08/07/2014,11:00,11:45,Frédéric BOUILLAULT
+K2,session plénière,Plénière 2,Grand amphi Marie Curie,08/07/2014,11:45,12:30,Eric LABOURE
+K3,session plénière,Plénière 3,Grand amphi Marie Curie,09/07/2014,09:00,10:00,Multon Bernard
+K4,session plénière,Plénière 4,Grand amphi Marie Curie,10/07/2014,08:30,09:30,??
+SO-J1-A,session orale,Thermique des composants et systèmes électroniques de puissance,Grand amphi Marie Curie,08/07/2014,15:30,18:00,xxxxx
+SO-J1-B,session orale,Dispositifs EM et actionneurs spéciaux,Amphi Tocqueville,08/07/2014,15:30,18:00,"Rachid IBTIOUEN, Christophe ESPANET"
+SO-J1-C,session orale,Matériaux magnétiques et conducteurs,Salle Condorcet,08/07/2014,15:30,18:00,"Afef LEBOUC, Jean LEVEQUE"
+SO-J2am-A,session orale,Contraintes d'usage,Salle Condorcet,09/07/2014,10:30,13:00,xxxxx
+SO-J2am-B,session orale,Systèmes d'énergie/Transport,Grand amphi Marie Curie,09/07/2014,10:30,13:00,"Mohamed GABSI, XXXX"
+SO-J2am-C,session orale,Matériaux Diélectriques et systèmes d'isolation,Amphi Tocqueville,09/07/2014,10:30,13:00,"Petru NOTHINGER, XXXX"
+SO-J2pm-A,session orale,Intégration de puissance et architecture,Amphi Tocqueville,09/07/2014,16:00,18:30,xxxxx
+SO-J2pm-B,session orale,Systèmes Energies Renouvelables/Réseau,Salle Condorcet,09/07/2014,16:00,18:30,"Seddik BACHA, Benoir ROBYNS"
+SO-J2pm-C,session orale,Méthodes et méthodologies en GE,Grand amphi Marie Curie,09/07/2014,16:00,18:30,xxxxx
+SO-J3-A,session orale,Composants semi-conducteurs,Grand amphi Marie Curie,10/07/2014,11:00,13:00,xxxxx
+SO-J3-B,session orale,Contrôle/Diagnostic,Amphi Tocqueville,10/07/2014,11:00,13:00,"Alain BOUSCAYROL, XXXX"
+SO-J3-C,session orale,Systèmes de stockage/Piles à combustible,Salle Condorcet,10/07/2014,11:00,13:00,"Pascal VENET, XXXX"
+SP-J1-A,session poster,Thermique des composants et systèmes électroniques de puissance,Hall Villon,08/07/2014,14:00,15:00,xxxxx
+SP-J1-B,session poster,Dispositifs EM et actionneurs spéciaux,Hall Villon,08/07/2014,14:00,15:00,xxxxx
+SP-J1-C,session poster,Matériaux magnétiques et conducteurs,Hall Villon,08/07/2014,14:00,15:00,xxxxx
+SP-J2-A,session poster,Contraintes d'usage,Hall Villon,09/07/2014,14:30,15:30,xxxxx
+SP-J2-B,session poster,Intégration de puissance et architecture,Hall Villon,09/07/2014,14:30,15:30,xxxxx
+SP-J2-C,session poster,Matériaux Diélectriques et systèmes d'isolation,Hall Villon,09/07/2014,14:30,15:30,xxxxx
+SP-J2-D,session poster,Systèmes d'énergie/Transport,Hall Villon,09/07/2014,14:30,15:30,xxxxx
+SP-J2-E,session poster,Systèmes Energies Renouvelables/Réseau,Hall Villon,09/07/2014,14:30,15:30,xxxxx
+SP-J3-A,session poster,Composants semi-conducteurs,Hall Villon,10/07/2014,09:30,10:30,xxxxx
+SP-J3-B,session poster,Contrôle/Diagnostic,Hall Villon,10/07/2014,09:30,10:30,xxxxx
+SP-J3-C,session poster,Méthodes et méthodologies en GE,Hall Villon,10/07/2014,09:30,10:30,xxxxx
+SP-J3-D,session poster,Systèmes de stockage/Piles à combustible,Hall Villon,10/07/2014,09:30,10:30,xxxxx
+SS-J1,session spéciale,Session spéciale GE et Mathématiques appliquées,Amphi Fonteneau,08/07/2014,15:30,18:00,"Stéphane CLENET, XXXXX"
+SS-J2am,session spéciale,Session spéciale GE et Biologie/santé,Amphi Fonteneau,09/07/2014,10:30,13:00,"Emmanuel ODIC, XXXXX"
+SS-J2pm,session spéciale,Session spéciale GE et Mécanique,Amphi Fonteneau,09/07/2014,16:00,18:30,"Laurent DANIEL, XXXX"
+SS-J3,session spéciale,Session spéciale GE et Physique,Amphi Fonteneau,10/07/2014,11:00,13:00,"Eric LABOURE, Frédéricd BOUILLAULT"

@@ -26,7 +26,7 @@
         <ol class='article-list'>
         {% for art in sessions[s_id] %}
           <li class='article'>
-            <span class="authors">{{ art.authors}}</span>
+            {{ article_macros.authors(art.authors_split, '', with_affil=True, with_link=False)|indent(12) }}
             <br>
             <em class="article-title">"{{ art.title}}"</em>
             <br>
