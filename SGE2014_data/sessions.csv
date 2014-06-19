@@ -1,21 +1,21 @@
 id,type,name,location,date,begin,end,chairmen
-K1,session plénière,Plénière 1,Grand amphi Marie Curie,08/07/2014,11:00,11:45,Frédéric BOUILLAULT
-K2,session plénière,Plénière 2,Grand amphi Marie Curie,08/07/2014,11:45,12:30,Eric LABOURE
-K3,session plénière,Plénière 3,Grand amphi Marie Curie,09/07/2014,09:00,10:00,Multon Bernard
-K4,session plénière,Plénière 4,Grand amphi Marie Curie,10/07/2014,08:30,09:30,??
-SO-J1-A,session orale,Thermique des composants et systèmes électroniques de puissance,Grand amphi Marie Curie,08/07/2014,15:30,18:00,xxxxx
+K1,session plénière,Plénière 1,Grand amphi Marie Curie,08/07/2014,11:00,11:45,Frédéric MAZALEYRAT
+K2,session plénière,Plénière 2,Grand amphi Marie Curie,08/07/2014,11:45,12:30,Multon Bernard ??
+K3,session plénière,Plénière 3,Grand amphi Marie Curie,09/07/2014,09:00,10:00,Multon Bernard ??
+K4,session plénière,Plénière 4,Grand amphi Marie Curie,10/07/2014,08:30,09:30,Multon Bernard ??
+SO-J1-A,session orale,Thermique des composants et systèmes d'électronique de puissance,Grand amphi Marie Curie,08/07/2014,15:30,18:00,xxxxx
 SO-J1-B,session orale,Dispositifs EM et actionneurs spéciaux,Amphi Tocqueville,08/07/2014,15:30,18:00,"Rachid IBTIOUEN, Christophe ESPANET"
 SO-J1-C,session orale,Matériaux magnétiques et conducteurs,Salle Condorcet,08/07/2014,15:30,18:00,"Afef LEBOUC, Jean LEVEQUE"
 SO-J2am-A,session orale,Contraintes d'usage,Salle Condorcet,09/07/2014,10:30,13:00,xxxxx
-SO-J2am-B,session orale,Systèmes d'énergie/Transport,Grand amphi Marie Curie,09/07/2014,10:30,13:00,"Mohamed GABSI, XXXX"
+SO-J2am-B,session orale,Systèmes d'énergie/Transport,Grand amphi Marie Curie,09/07/2014,10:30,13:00,"Mohamed GABSI, Guy Freidrich"
 SO-J2am-C,session orale,Matériaux Diélectriques et systèmes d'isolation,Amphi Tocqueville,09/07/2014,10:30,13:00,"Petru NOTHINGER, XXXX"
 SO-J2pm-A,session orale,Intégration de puissance et architecture,Amphi Tocqueville,09/07/2014,16:00,18:30,xxxxx
-SO-J2pm-B,session orale,Systèmes Energies Renouvelables/Réseau,Salle Condorcet,09/07/2014,16:00,18:30,"Seddik BACHA, Benoir ROBYNS"
-SO-J2pm-C,session orale,Méthodes et méthodologies en GE,Grand amphi Marie Curie,09/07/2014,16:00,18:30,xxxxx
+SO-J2pm-B,session orale,Systèmes Energies Renouvelables/Réseau,Salle Condorcet,09/07/2014,16:00,18:30,"Seddik BACHA, Benoit ROBYNS"
+SO-J2pm-C,session orale,Méthodes et méthodologies en GE,Grand amphi Marie Curie,09/07/2014,16:00,18:30,"Xavier ROBOAM, Bruno DEHEZ"
 SO-J3-A,session orale,Composants semi-conducteurs,Grand amphi Marie Curie,10/07/2014,11:00,13:00,xxxxx
-SO-J3-B,session orale,Contrôle/Diagnostic,Amphi Tocqueville,10/07/2014,11:00,13:00,"Alain BOUSCAYROL, XXXX"
-SO-J3-C,session orale,Systèmes de stockage/Piles à combustible,Salle Condorcet,10/07/2014,11:00,13:00,"Pascal VENET, XXXX"
-SP-J1-A,session poster,Thermique des composants et systèmes électroniques de puissance,Hall Villon,08/07/2014,14:00,15:00,xxxxx
+SO-J3-B,session orale,Contrôle/Diagnostic,Amphi Tocqueville,10/07/2014,11:00,13:00,"Alain BOUSCAYROL, Jamel BELHADJ"
+SO-J3-C,session orale,Systèmes de stockage/Piles à combustible,Salle Condorcet,10/07/2014,11:00,13:00,"Pascal VENET, Hamid GALOUS"
+SP-J1-A,session poster,Composants et systèmes sous contraintes thermiques,Hall Villon,08/07/2014,14:00,15:00,xxxxx
 SP-J1-B,session poster,Dispositifs EM et actionneurs spéciaux,Hall Villon,08/07/2014,14:00,15:00,xxxxx
 SP-J1-C,session poster,Matériaux magnétiques et conducteurs,Hall Villon,08/07/2014,14:00,15:00,xxxxx
 SP-J2-A,session poster,Contraintes d'usage,Hall Villon,09/07/2014,14:30,15:30,xxxxx
