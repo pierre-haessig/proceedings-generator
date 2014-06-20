@@ -217,18 +217,23 @@ ul.sponsor_list span {
 
 .download-pdf {
   display: block;
+  width: 128px;
   float: right;
   text-align:center;
   border: dotted 1px #CCC;
 }
-.download-pdf:hover {
+.download-pdf.available:hover {
   background-color: #F5F5F5;
   text-decoration: none;
 }
 
 .download-pdf img {
-  width: 128px;
+  width: 100%;
 }
+.download-pdf.not-available img {
+  opacity: 0.3;
+}
+
 
 .download-pdf p {
   margin-top: 0;
@@ -239,6 +244,7 @@ ul.sponsor_list span {
 @media screen and (max-width: 730px) {
   .download-pdf {
     float: none;
+    width: inherit;
   }
   .download-pdf img {
     max-width: 17%;

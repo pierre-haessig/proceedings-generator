@@ -10,6 +10,9 @@ import io
 import csv
 import re
 import datetime
+import os.path
+from os.path import join
+import shutil
 
 
 def utf_8_encoder(unicode_csv_data):
@@ -131,6 +134,27 @@ def read_sessions(fname):
             sessions[s_id] = details
 
         return sessions
+
+def manage_pdf(art, data_config, force_copy=False):
+    '''find article's pdf file and copy it to the render_path
+    
+    Returns
+    -------
+    path to the copied pdf file (if found), relative to render_path
+        None if pdf source is not found.
+    '''
+    source_path = data_config['path']
+    render_path = data_config['render_path']
+    
+    pdf_source = join(source_path, 'articles', art['docid']+'.pdf')
+    pdf_dest = join('articles', 'article_'+art['docid']+'.pdf')
+    if not os.path.exists(pdf_source):
+        print('article {} has no PDF!'.format(art['docid']))
+        return None
+    else:
+        if not os.path.exists(join(render_path, pdf_dest)) or force_copy:
+            shutil.copyfile(pdf_source, join(render_path, pdf_dest))
+        return pdf_dest
 
 if __name__ == '__main__':
     # Example:

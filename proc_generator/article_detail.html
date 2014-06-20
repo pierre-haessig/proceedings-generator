@@ -3,11 +3,18 @@
 
 {% block title %}Fiche article {{ article.authors_etal }}{% endblock title %}
 {% block content %}
-  
-  <a {{ article_macros.pdf_href(article, root_path) }} class='download-pdf'>
+
+  {% if article.pdf -%}
+  <a href="{{ root_path }}/{{ article.pdf }}" class='download-pdf available'>
     <img src='pdf_icon.png' alt='pdf icon'>
     <p>Article PDF</p>
   </a>
+  {%- else -%}
+  <div class='download-pdf not-available'>
+    <img src='pdf_icon.png' alt='pdf icon'>
+    <p>Présentation PDF disponible prochainement</p>
+  </div>
+  {%- endif %}
   
   <section class='article-info'>
   <h1>{{ article.title }}</h1>

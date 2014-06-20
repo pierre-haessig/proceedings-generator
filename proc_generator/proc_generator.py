@@ -10,14 +10,23 @@ import os.path
 from os.path import join
 import shutil
 import io
+import locale
 import jinja2
 from jinja2 import Environment, FileSystemLoader
 
-from data_reader import read_articles, read_sponsors, read_sessions
+import data_reader
+reload(data_reader)
+
+from data_reader import (
+    read_articles, read_sponsors, read_sessions,
+    manage_pdf)
 
 ### Read configuration
 config = {}
 execfile('config.py', {}, config)
+
+# locale (for time formatting)
+assert locale.getdefaultlocale()[0][0:2] == config['c']['lang']
 
 config_vars = config['c']
 data = config['data']
@@ -33,7 +42,9 @@ config_vars['articles'] = articles
 
 print('{:d} articles read from table "{}"'.format(len(articles),
                                                 data['article_table']))
-
+# Copy pdfs
+for art in articles:
+    art['pdf'] = manage_pdf(art, data, force_copy=False)
 
 ### build topic -> [articles] mapping:
 topics = {}

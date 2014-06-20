@@ -23,8 +23,11 @@
 </span>
 {%- endmacro %}
 
-{% macro pdf_href(art, root_path) -%}
-href="{{ root_path }}/articles/article_{{ art.docid }}.pdf"
+
+{% macro pdf_link(art, root_path) -%}
+{% if art.pdf -%}
+<a href="{{ root_path }}/{{ art.pdf }}" class='pdf'>PDF</a>
+{%- endif %}
 {%- endmacro %}
 
 
@@ -34,7 +37,7 @@ href="{{ root_path }}/articles/article_{{ art.docid }}.pdf"
     {{ authors(art.authors_split, root_path)|indent(4) }}.
     <br>
     {{ title_link(art, root_path)|indent(4) }}
-    <a {{ pdf_href(art, root_path) }} class='pdf'>PDF</a>
+    {{ pdf_link(art, root_path)|indent(4) }}
   </li>
 {% endfor %}
 {%- endmacro %}
@@ -60,7 +63,7 @@ href="{{ root_path }}/articles/article_{{ art.docid }}.pdf"
     <strong>Session</strong> :
     <a href="{{ root_path }}/sessions/session_{{ art.id_session }}.html">
         {{ art.id_session}}</a>
-    <a {{ pdf_href(art, root_path) }} class='pdf'>PDF</a>
+    {{ pdf_link(art, root_path)|indent(4) }}
   </li>
 {% endfor %}
 {%- endmacro %}
