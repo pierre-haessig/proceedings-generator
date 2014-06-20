@@ -169,7 +169,8 @@ ul.sponsor_list span {
   list-style-type: none;
   border-left: solid 1px #CCC;
   padding-left: 7px;
-  padding-right: 3.5em;
+  padding-right: 60px;
+  margin-left: 60px;
   position:relative;
 }
 
@@ -188,12 +189,13 @@ ul.sponsor_list span {
 .article_list a.pdf {
   display:block;
   position:absolute;
-  top:0px;
-  right:0px;
+  top: 0px;
+  left: -60px;
+  width: 58px;
   height: 100%;
-  color: #C00;
   border-left: solid 1px #CCC;
-  padding: 0 7px;
+  color: #C00;
+  text-align:center;
   text-decoration: none;
 }
 
@@ -204,12 +206,15 @@ ul.sponsor_list span {
 @media screen and (max-width: 600px) {
   .article_list li {
   padding-right: inherit;
+  margin-left: inherit;
   }
   .article_list a.pdf {
-    position:relative;
+    position: relative;
+    width: inherit;
+    left: inherit;
     /*display:inline; */
     border: dotted 1px #CCC;
-    text-align:center;
+
   }
 }
 
