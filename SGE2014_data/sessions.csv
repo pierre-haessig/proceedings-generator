@@ -1,8 +1,8 @@
 id,type,name,location,date,begin,end,chairmen
 K1,session plénière,Plénière 1,Grand amphi Marie Curie,08/07/2014,11:00,11:45,Frédéric MAZALEYRAT
-K2,session plénière,Plénière 2,Grand amphi Marie Curie,08/07/2014,11:45,12:30,Multon Bernard ??
-K3,session plénière,Plénière 3,Grand amphi Marie Curie,09/07/2014,09:00,10:00,Multon Bernard ??
-K4,session plénière,Plénière 4,Grand amphi Marie Curie,10/07/2014,08:30,09:30,Multon Bernard ??
+K2,session plénière,Plénière 2,Grand amphi Marie Curie,08/07/2014,11:45,12:30,Jean-Paul FERRIEUX
+K3,session plénière,Plénière 3,Grand amphi Marie Curie,09/07/2014,09:00,10:00, Bernard MULTON
+K4,session plénière,Plénière 4,Grand amphi Marie Curie,10/07/2014,08:30,09:30, ??
 SO-J1-A,session orale,Thermique des composants et systèmes d'électronique de puissance,Grand amphi Marie Curie,08/07/2014,15:30,18:00,xxxxx
 SO-J1-B,session orale,Dispositifs EM et actionneurs spéciaux,Amphi Tocqueville,08/07/2014,15:30,18:00,"Rachid IBTIOUEN, Christophe ESPANET"
 SO-J1-C,session orale,Matériaux magnétiques et conducteurs,Salle Condorcet,08/07/2014,15:30,18:00,"Afef LEBOUC, Jean LEVEQUE"
