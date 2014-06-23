@@ -23,6 +23,9 @@
 </span>
 {%- endmacro %}
 
+{% macro etal(authors_split) -%}
+{{ authors_split[0][0] }} {{'et al.' if authors_split|count > 1 else ''}}
+{%- endmacro %}
 
 {% macro pdf_link(art, root_path) -%}
 {% if art.pdf -%}

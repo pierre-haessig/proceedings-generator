@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% import 'article_macros.html' as article_macros %}
 
-{% block title %}Fiche article {{ article.authors_etal }}{% endblock title %}
+{% block title %}Fiche article {{
+    article_macros.etal(article.authors_split)
+}}{% endblock title %}
 {% block content %}
 
   {% if article.pdf -%}

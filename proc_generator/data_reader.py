@@ -73,11 +73,6 @@ def read_articles(fname):
             # end for each author
             item['authors_split'] = authors_split
             item['authors_no_affil'] = re_affil.subn('', item['authors'])[0]
-            # first author + "et al." if more than one
-            authors_etal = authors_split[0][0]
-            if len(authors_split) > 1:
-                authors_etal += ' et al.'
-            item['authors_etal'] = authors_etal
             
             # Process labs name:
             item['labs_split'] = decode_labs(item['labos'])
