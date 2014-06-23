@@ -11,7 +11,7 @@
 
 {% macro authors(authors_split, root_path, with_affil=False, with_link=True) -%}
 <span class='article-authors'>
-  {% for auth, affil in authors_split %}
+  {% for auth, affil in authors_split -%}
     {%- if with_link -%}
     <a href="{{ root_path }}/author_list.html#{{auth}}">{{ auth }}</a>
     {%- else -%}
@@ -19,7 +19,7 @@
     {%- endif -%}{{ 
      fmt_affil(affil) if with_affil else ''}}{{
      ', ' if not loop.last else '' }}
-  {% endfor -%}
+  {%- endfor -%}
 </span>
 {%- endmacro %}
 
