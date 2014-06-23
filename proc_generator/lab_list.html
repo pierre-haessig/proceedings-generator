@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% set active_page = "lab_list.html" -%}
+
+{% block title %}Liste des laboratoire{% endblock title %}
+{% block content %}
+  <h1>Liste des laboratoires</h1>
+  
+  <em>Liste des contributions, classées par laboratoire</em>
+  
+  {% import 'article_macros.html' as article_macros %}
+  <ul class="lab-list">
+  {% for lab, art_list in labs|dictsort %}
+    <li >{{ lab}}
+    
+    <ul>
+    {% for art in art_list %}
+      <li>
+        {{ article_macros.title_link(art, root_path) }}
+      </li>
+    {% endfor %}
+    </ul>
+    </li>
+  {% endfor %}
+  </ul>
+
+{% endblock content %}

@@ -334,6 +334,31 @@ ul.author_list em.article-title {
 }
 
 
+/* List of labs, with their articles */
+ul.lab-list {
+  padding-left: 0;
+}
+ul.lab-list > li {
+  margin-bottom: 1em;
+  list-style-type: none;
+}
+
+/*list of articles of the author*/
+ul.lab-list > li ul {
+  padding-left: 10px;
+}
+ul.lab-list > li li{
+  list-style-type: none;
+}
+ul.lab-list > li li:before{
+  content: "— ";
+  color: #CCC;
+}
+
+ul.lab-list em.article-title {
+  font-size: 0.8em;
+}
+
 /*** List of all sessions***/
 h2.day {
   background-color:#777;

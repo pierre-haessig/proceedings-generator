@@ -19,6 +19,17 @@ def utf_8_encoder(unicode_csv_data):
     for line in unicode_csv_data:
         yield line.encode('utf-8')
 
+def decode_labs(labs):
+    '''matches labs strings like
+    '1 - Dpt. Energie, SUPELEC-Campus Gif, 2 - Laboratoire L2EP'
+
+    Returns the list of labs' name.
+    ['Dpt. Energie, SUPELEC-Campus Gif', 'Laboratoire L2EP']
+    '''
+    labs = re.findall('(^\d - |, \d - )(.*?)(?=, \d - |$)', labs)
+    labs = [lab for (idx, lab) in labs]
+    return labs
+
 
 def read_articles(fname):
     '''read CSV table of the articles contributed to the conference
@@ -67,7 +78,10 @@ def read_articles(fname):
             if len(authors_split) > 1:
                 authors_etal += ' et al.'
             item['authors_etal'] = authors_etal
-
+            
+            # Process labs name:
+            item['labs_split'] = decode_labs(item['labos'])
+            
             yield item
 
 

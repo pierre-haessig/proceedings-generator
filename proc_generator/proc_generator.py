@@ -145,6 +145,27 @@ config_vars['authors']      = authors
 config_vars['author_index'] = author_index
 
 
+### build labs -> [articles] mapping:
+labs = {}
+
+for art in articles:
+    for lab in art['labs_split']:
+        if lab not in labs:
+            labs[lab] = []
+        # Append article to its lab:
+        if art not in labs[lab]:
+            labs[lab].append(art)
+
+print('\nlabs stats:')
+print('{:d} labs found'.format(len(labs)))
+
+for lab in sorted(labs):
+    n_art = len(labs[lab])
+    #print(' - "{}": {:d} article(s)'.format(lab, n_art))
+
+config_vars['labs']  = labs
+
+print()
 
 ### Read the sponsors:
 fname_sponsors = join(data['path'], data['sponsor_table'])
@@ -218,6 +239,13 @@ for top in topics:
 template = env.get_template('author_list.html')
 
 with io.open(join(data['render_path'], 'author_list.html'),
+             'w', encoding='utf-8') as out:
+    out.write(template.render(config_vars, root_path='.'))
+
+# 5b) List of labs:
+template = env.get_template('lab_list.html')
+
+with io.open(join(data['render_path'], 'lab_list.html'),
              'w', encoding='utf-8') as out:
     out.write(template.render(config_vars, root_path='.'))
 
