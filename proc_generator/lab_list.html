@@ -12,12 +12,12 @@
   {% for lab, art_list in labs|dictsort %}
     <li >{{ lab}}
     
-    <ul>
-    {% for art in art_list %}
+    <ul class='title-list'>
+    {% for art in art_list -%}
       <li>
         {{ article_macros.title_link(art, root_path) }}
       </li>
-    {% endfor %}
+    {%- endfor %}
     </ul>
     </li>
   {% endfor %}

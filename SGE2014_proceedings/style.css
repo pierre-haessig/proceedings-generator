@@ -286,8 +286,9 @@ div.abstract {
   margin-bottom: 10px;
 }
 
-/* List of authors, with their articles */
+/*** List of authors, with their articles ***/
 
+/* author index */
 nav.author-index {
   text-align: center;
   font-size: 1.2em;
@@ -309,6 +310,7 @@ nav.author-index a:hover{
   text-decoration: none;
 }
 
+/* List of authors, with their articles */
 ul.author_list {
   padding-left: 0;
 }
@@ -316,23 +318,6 @@ ul.author_list > li {
   margin-bottom: 1em;
   list-style-type: none;
 }
-
-/*list of articles of the author*/
-ul.author_list > li ul {
-  padding-left: 10px;
-}
-ul.author_list > li li{
-  list-style-type: none;
-}
-ul.author_list > li li:before{
-  content: "— ";
-  color: #CCC;
-}
-
-ul.author_list em.article-title {
-  font-size: 0.8em;
-}
-
 
 /* List of labs, with their articles */
 ul.lab-list {
@@ -343,19 +328,20 @@ ul.lab-list > li {
   list-style-type: none;
 }
 
-/*list of articles of the author*/
-ul.lab-list > li ul {
+/* sublist of articles by the author or from lab*/
+ul.title-list {
   padding-left: 10px;
 }
-ul.lab-list > li li{
+
+ul.title-list > li {
   list-style-type: none;
 }
-ul.lab-list > li li:before{
+ul.title-list > li:before{
   content: "— ";
   color: #CCC;
 }
 
-ul.lab-list em.article-title {
+ul.title-list em.article-title {
   font-size: 0.8em;
 }
 

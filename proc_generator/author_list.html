@@ -19,12 +19,12 @@
   {% for auth, art_list in authors|dictsort %}
     <li id="{{ auth }}">{{ auth }}
     
-    <ul>
-    {% for art in art_list %}
+    <ul class='title-list'>
+    {% for art in art_list -%}
       <li>
         {{ article_macros.title_link(art, root_path) }}
       </li>
-    {% endfor %}
+    {%- endfor %}
     </ul>
     </li>
   {% endfor %}
