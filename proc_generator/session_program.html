@@ -22,13 +22,16 @@
   <h3 class='hours'> {{ begin.strftime('%Hh%M') }} — {{ end.strftime('%Hh%M') }} </h3>
   {% for s_id, ss in s_group|dictsort %}
     <h4 class='session-name'> {{ ss.type|title }} {{ s_id }} : {{ ss.name }}</h4>
-        <h5 class='location'>{{ ss.location}}</h5>
+        <h5 class='location'>Salle : {{ ss.location}}</h5>
+        <h5 class='chairmen'>Président{{ 's' if ss.chairmen.split(',')|count > 1 else ''
+        }} : {{ ss.chairmen}}</h5>
+
         <ol class='article-list'>
         {% for art in sessions[s_id] %}
           <li class='article'>
-            {{ article_macros.authors(art.authors_split, '', with_affil=True, with_link=False)|indent(12) }}
-            <br>
             <em class="article-title">"{{ art.title}}"</em>
+            <br>
+            {{ article_macros.authors(art.authors_split, '', with_affil=True, with_link=False)|indent(12) }}
             <br>
             <small class="article-affil">{{ art.labos}}</small>
           </li>
