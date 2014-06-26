@@ -184,26 +184,33 @@ config_vars['labs']  = labs
 
 print()
 
-### Read the sponsors:
-fname_sponsors = join(data['path'], data['sponsor_table'])
+def manage_sponsors(data):
+    '''read sponsors data
+    
+    and copy logo files to `render_path`/images
+    '''
+    fname_sponsors = join(data['path'], 'sponsors', 'sponsors.csv')
 
-if os.path.exists(fname_sponsors):
-    sponsors  = read_sponsors(fname_sponsors)
-    print('{:d} sponsors found'.format(len(sponsors)))
-else:
-    sponsors = []
-    print('No sponsors')
+    if os.path.exists(fname_sponsors):
+        sponsors  = read_sponsors(fname_sponsors)
+        print('{:d} sponsors found'.format(len(sponsors)))
+    else:
+        sponsors = []
+        print('No sponsors')
 
-config_vars['sponsors'] = sponsors
+    print('Copying logo files', end=': ')
+    # Copy logo files:
+    for spons in sponsors:
+        print(spons['logo'], end=', ')
+        logo_src = join(data['path'], 'sponsors', spons['logo'])
+        logo_dest = join(data['render_path'], 'images', spons['logo'])
+        shutil.copyfile(logo_src, logo_dest)
+    print()
+    
+    return sponsors
+# end manage_sponsors
 
-print('Copying logo files', end=': ')
-# Copy logo files:
-for spons in sponsors:
-    print(spons['logo'], end=', ')
-    logo_src = join(data['path'], spons['logo'])
-    logo_dest = join(data['render_path'], 'images', spons['logo'])
-    shutil.copyfile(logo_src, logo_dest)
-print()
+config_vars['sponsors'] = manage_sponsors(data)
 
 def copy_static_files(data):
     '''Copy static files to the `render_path`'''
