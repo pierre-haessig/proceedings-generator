@@ -1,5 +1,5 @@
 body {
-  font-family: sans;
+  font-family: sans-serif;
 
 }
 
@@ -18,5 +18,9 @@ li.article {
 }
 
 .article-authors {
+  color: #004bab;
+}
+
+.session-ids {
   color: #004bab;
 }

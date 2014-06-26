@@ -41,5 +41,24 @@
   {% endfor %}
 {% endfor %}
 
+<h2>Index des auteurs</h2>
+
+<em>({{authors|count}} auteurs référencés)</em>
+
+{% import 'article_macros.html' as article_macros %}
+<ul class="author-list">
+{% for auth, art_list in authors|dictsort %}
+  <li>
+    {{ auth }} :
+    <span class='session-ids'>
+    {%- for art in art_list -%}
+    {{ art.id_session}}{{
+       ', ' if not loop.last else '' }}
+    {%- endfor -%}
+    </span>
+  </li>
+{% endfor %}
+</ul>
+
 </body>
 </html>
