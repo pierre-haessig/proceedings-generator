@@ -42,6 +42,23 @@ config_vars['articles'] = articles
 
 print('{:d} articles read from table "{}"'.format(len(articles),
                                                 data['article_table']))
+
+def create_skeleton(render_path):
+    '''create the skeleton of directories for the `render_path`
+    '''
+    subdirs = ['articles', 'images', 'topics', 'sessions']
+    if not os.path.isdir(render_path):
+        os.mkdir(render_path)
+        print('create "{}" directory'.format(render_path))
+    
+    for sd in subdirs:
+        sd = join(render_path, sd)
+        if not os.path.isdir(sd):
+            os.mkdir(sd)
+            print('create "{}" directory'.format(sd))
+# end create_skeleton
+create_skeleton(data['render_path'])
+
 # Copy pdfs
 for art in articles:
     art['pdf'] = manage_pdf(art, data, force_copy=False)
@@ -187,6 +204,20 @@ for spons in sponsors:
     logo_dest = join(data['render_path'], 'images', spons['logo'])
     shutil.copyfile(logo_src, logo_dest)
 print()
+
+def copy_static_files(data):
+    '''Copy static files to the `render_path`'''
+    # list static files:
+    from glob import glob
+    fname_static_files = glob(join(data['path'], 'static', '*'))
+    # copy:
+    import subprocess
+    subprocess.check_call(['cp', '-r'] + fname_static_files + \
+                          [data['render_path']+'/'])
+    print('static file copy: {:d} files/directories'.format(
+          len(fname_static_files)))
+# end copy()
+copy_static_files(data)
 
 ### Write web pages:
 
