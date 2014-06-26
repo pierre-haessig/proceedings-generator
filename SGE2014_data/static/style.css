@@ -440,11 +440,40 @@ ul.session-list > li:last-child {
 .session-info {
   padding:5px;
   text-align: center;
+  margin-bottom: 0;
 }
 
 .session-type {
   color: rgba(0,0,0,0.5);
 }
+
+
+/* Navigation for parallel sessions */
+.session-carousel {
+  padding: 5px;
+  text-align: center;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+.session-carousel .caption {
+  color: #333;
+}
+
+.session-carousel a {
+  display: block;
+  background-color: #ddd;
+  padding: 0px 10px;
+}
+
+.session-carousel .prev {
+  float: left;
+}
+
+.session-carousel .next {
+  float: right;
+}
+
 
 img.word-cloud {
   max-width: 100%;

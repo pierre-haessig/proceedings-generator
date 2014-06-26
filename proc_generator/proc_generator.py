@@ -125,6 +125,16 @@ for s_id in sessions_details:
 
     sessions_groups[s_date][s_begin, s_end][s_id] = sessions_details[s_id]
 
+# Create parallel_next and parallel_prev links
+for day, day_group in sessions_groups.iteritems():
+    for (begin, end), s_group in day_group.iteritems():
+        sorted_ids = sorted(s_group)
+        for i, s_id in enumerate(sorted_ids):
+            id_next = sorted_ids[(i+1) % len(sorted_ids)]
+            id_prev = sorted_ids[(i-1) % len(sorted_ids)]
+            ss = s_group[s_id]
+            ss['parallel_next'] = id_next
+            ss['parallel_prev'] = id_prev
 
 print('\nSessions stats:')
 for s_id in sorted(sessions):

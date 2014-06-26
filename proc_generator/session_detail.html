@@ -13,6 +13,12 @@
   <small class='session-type'>{{ session.type }} </small>
   </p>
   
+  <nav class='session-carousel'>
+  <em class='caption'>...en parallèle...</em>
+  <a href='session_{{ session.parallel_prev }}.html' class='prev'>← session {{ session.parallel_prev }}</a>
+  <a href='session_{{ session.parallel_next}}.html' class='next'>session {{ session.parallel_next }} →</a>
+  </nav>
+  
   <p>
   <strong>Chairmen</strong> : {{ session.chairmen }}
   </p>
