@@ -1,2 +1,5 @@
 *~
 *.pyc
+word_clouds/words_*.txt
+word_clouds/words_*.svg
+word_clouds/words_*.png
