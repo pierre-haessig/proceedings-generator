@@ -58,6 +58,17 @@ print('articles are grouped in {:d} sessions'.format(len(sessions)))
 
 # Add a special "all_papers" session
 sessions['all_papers'] = articles
+# Titles only
+sessions['all_titles'] = [{'title': art['title'],
+                           'abstract': ''}
+                          for art in articles]
+
+# Select only some:
+#sessions = {key: sessions[key] for key in ['all_titles']}
+
+# Blacklist
+black_list = ['K1']
+# TODO
 
 ### Write session texts:
 
@@ -71,14 +82,14 @@ for s_id in sessions:
             out.write('\n')
     print('{:2d} abstracts written to "{}"'.format(len(sessions[s_id]), fname_txt))
     
-    # Run WordCram script:
-    print('Word cloud generation...', end='')
-    subprocess.call([word_cram, fname_txt])
-    print('DONE')
+#    # Run WordCram script:
+#    print('Word cloud generation...', end='')
+#    subprocess.call([word_cram, fname_txt])
+#    print('DONE')
     
     # Inkscape SVG-> PNG conversion
     print('Inkscape conversion...', end='')
-    subprocess.call(['inkscape',
+    subprocess.call(['inkscape', '--export-area-drawing',
                      '--export-png='+fname_txt.replace('.txt', '.png'),
                      fname_txt.replace('.txt', '.svg')
                     ])

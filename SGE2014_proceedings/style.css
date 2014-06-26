@@ -445,3 +445,10 @@ ul.session-list > li:last-child {
 .session-type {
   color: rgba(0,0,0,0.5);
 }
+
+img.word-cloud {
+  max-width: 100%;
+  text-align: center;
+  display: block;
+  margin: 20px auto;
+}
