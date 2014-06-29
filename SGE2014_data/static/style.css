@@ -450,20 +450,22 @@ ul.session-list > li:last-child {
 
 /* Navigation for parallel sessions */
 .session-carousel {
-  padding: 5px;
+  padding: 0px;
   text-align: center;
   background-color: #eee;
   overflow: hidden;
 }
 
 .session-carousel .caption {
+  display: inline-block;
   color: #333;
+  padding: 5px;
 }
 
 .session-carousel a {
   display: block;
   background-color: #ddd;
-  padding: 0px 10px;
+  padding: 5px 15px;
 }
 
 .session-carousel .prev {

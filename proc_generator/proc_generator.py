@@ -133,8 +133,12 @@ for day, day_group in sessions_groups.iteritems():
             id_next = sorted_ids[(i+1) % len(sorted_ids)]
             id_prev = sorted_ids[(i-1) % len(sorted_ids)]
             ss = s_group[s_id]
-            ss['parallel_next'] = id_next
-            ss['parallel_prev'] = id_prev
+            if len(s_group) > 1:
+                ss['parallel_next'] = id_next
+                ss['parallel_prev'] = id_prev
+            else:
+                ss['parallel_next'] = None
+                ss['parallel_prev'] = None
 
 print('\nSessions stats:')
 for s_id in sorted(sessions):
