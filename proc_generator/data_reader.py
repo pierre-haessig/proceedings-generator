@@ -72,7 +72,8 @@ def read_articles(fname):
                 authors_split.append((name, affil))
             # end for each author
             item['authors_split'] = authors_split
-            item['authors_no_affil'] = re_affil.subn('', item['authors'])[0]
+            item['authors_no_affil'] = ', '.join(
+                [name for (name, affil) in authors_split])
             
             # Process labs name:
             item['labs_split'] = decode_labs(item['labos'])

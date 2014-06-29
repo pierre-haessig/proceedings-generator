@@ -1,34 +1,26 @@
-<!doctype html>
+{% macro eval_presentation(art, session) -%}
+<h1 class='title'>Évaluation des présentations</h1>
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>Compte-rendu de présentation</title>
-
-  <link rel="stylesheet" href="print-style.css">
-</head>
-
-<body>
-
-<h1 class='title'>Compte-rendu de présentation</h1>
-<h2 class='subtitle'>évaluation des contributions complètes</h2>
-
+<p><em><small>
+Évaluation des contributions complètes dans l'optique de leur présélection pour publication dans des revues partenaires.
+</small></em></p>
 
 <p class='chairmen'>
-<strong>Président(e) de session</strong><sup>*</sup> : XXXXXXX(xxx), YYYYYYYYY(yyyyyy)
+<strong>Président(e) de session</strong><sup>*</sup> : 
+{{ session.chairmen }}
 <br>
 <small><sup>*</sup> Entourez votre nom (et amendez/corrigez si nécessaire).</small>
 </p>
 
-<div class='article-info'>
-  <p>N° de la contribution : XXXX
+<div class='info-box'>
+  <p><strong>Titre</strong>
+  <em class="article-title">"{{ art.title}}"</em>
+  <br>
+  (contribution n°{{ art.docid }})
   </p>
 
-  <p>Titre de la contribution : XXXX
-  </p>
-
-  <p>Auteurs : XXXXX
+  <p><strong>Auteurs</strong> :
+  <span class='article-authors'>{{ art.authors_no_affil }}</span>
   </p>
 
   <p>Présentée par :
@@ -36,8 +28,8 @@
   </p>
 </div>
 
-
-<h2>Votre évaluation de l'article et de la présentation</h2>
+<div class='questions'>
+<h2 class='questions-title'>Votre évaluation de l'article et de la présentation</h2>
 
 <div class='question'>
   <h3>Contenu scientifique de la contribution complète :</h3>
@@ -130,6 +122,6 @@
     &nbsp;
   </p>
 </div>
+</div>
 
-</body>
-</html>
+{%- endmacro %}

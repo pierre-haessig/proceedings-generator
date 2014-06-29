@@ -83,16 +83,9 @@ env.globals['sessions_details'] = sessions_details
 # convert list of integers to list of strings
 env.filters['int_list_fmt'] = lambda ls:['{:d}'.format(a) for a in ls]
 
-# 1) Session evaluation:
+# Session evaluation:
 template = env.get_template('chair_eval_session.html')
 
-with io.open(join(data['chair_pkg_path'], 'chair_eval_session.html'),
-             'w', encoding='utf-8') as out:
-    out.write(template.render(config_vars, root_path='.'))
-
-# 2) Presentation evaluation:
-template = env.get_template('chair_eval_presentation.html')
-
-with io.open(join(data['chair_pkg_path'], 'chair_eval_presentation.html'),
+with io.open(join(data['chair_pkg_path'], 'chairman_package.html'),
              'w', encoding='utf-8') as out:
     out.write(template.render(config_vars, root_path='.'))

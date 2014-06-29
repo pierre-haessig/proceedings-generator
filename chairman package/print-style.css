@@ -1,15 +1,42 @@
 body {
   font-family: sans-serif;
-  margin: 2cm;
-  font-size: 12pt;
+  font-size: 10pt;
+  margin: 0;
 }
+
+@page {
+  margin: 2cm;
+}
+
+.page {
+  page-break-after: always;
+  page-break-inside:avoid;
+  position: relative;
+}
+
+.page .header {
+  float: right;
+  text-align: right;
+  color: #004bab;
+  border: 1px solid #004bab;
+  font-size: 8pt;
+  padding: 0.5em 1em;
+  width: 4cm;
+}
+
+.page .logo {
+  display: block;
+  float: left;
+  width: 4cm;
+}
+
 
 h1, h2, h3 {
   color: #004bab;
 }
 
-.title, .subtitle {
-  text-align: center;
+h1, h2 {
+  text-align: center
 }
 
 .title {
@@ -21,7 +48,7 @@ h1, h2, h3 {
 
 .chairmen {
   border: 1px solid #CCC;
-  margin:2em auto;
+  margin: 1em auto;
   padding: .5em 1em;
 }
 
@@ -30,17 +57,41 @@ h1, h2, h3 {
   border-bottom: 1px solid #CCC;
 }
 
+/*Article/session infos*/
+
+.info-box {
+  border: 1px solid #CCC;
+  margin: 1em auto;
+  padding: 0em 1em;
+}
+
+.info-box p {
+}
+
+.article-authors {
+  color: #004bab;
+}
+
+
 /* Questions */
+h2.questions-title {
+  margin-bottom: 0.5em;
+}
+
 .question {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.2em; /*space between questions*/
+}
+.questions .question:last-of-type {
+  margin-bottom: 0em;
 }
 
 .question h3 {
   margin: 0.3em;
+  font-size: 1em;
 }
 
 .question p {
-  margin: 0.3em;
+  margin: 0.3em 0;
 }
 
 /* Anwsers */
@@ -73,6 +124,7 @@ table.answer {
 /* Thanks */
 
 p.thanks {
+  margin-top: 2em;
   text-align: center;
   color: #004bab;
 }

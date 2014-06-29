@@ -1,3 +1,4 @@
+{% from 'chair_eval_presentation.html' import eval_presentation %}
 <!doctype html>
 
 <html lang="en">
@@ -11,22 +12,71 @@
 
 <body>
 
+<div class='page'>
+
+  <h1>Documents pour les Chairmen</h1>
+  
+  <p>
+  Documents à distribuer aux chairmen de chaque session, pour
+  l'évaluation des sessions des présentations.
+  </p>
+  
+  <p>
+  Pour chaque session il y a à remplir :
+  <ul>
+    <li>une fiche d'évaluation de la session</li>
+    <li>des fiches d'évaluation des présentation (une par contribution)</li>
+  </ul>
+  (fiches classées par session)
+  </p>
+  
+  <p>
+  Nombre de fiches "session" : {{sessions|count}}
+  <br>
+  Nombre de fiches "article" : {{articles|count}}
+  </p>
+
+</div>
+
+
+{% for s_id, session in sessions_details|dictsort %}
+{% set articles = sessions[s_id] %}
+<div class='page'>
+<img class='logo' src='{{ event_logo }}' alt="event's logo">
+
 <h1 class='title'>Compte-rendu de session</h1>
-<h2 class='subtitle'>Session : XXX</h2>
+<h2 class='subtitle'>{{ session.name }}</h2>
 
 
 <p class='chairmen'>
-  <strong>Président(e) de session</strong><sup>*</sup> : XXXXXXX(xxx), YYYYYYYYY(yyyyyy)
+  <strong>Président(e) de session</strong><sup>*</sup> :
+  {{ session.chairmen }}
   <br>
   <small><sup>*</sup> Entourez votre nom (et amendez/corrigez si nécessaire).</small>
 </p>
 
-<p>
-Nombre de présentations réalisées : <span class='blank' style='width:3em;'>&nbsp;</span> (sur XX prévus)
-</p>
+<div class='info-box'>
+  <p>
+  {{ session.type|capitalize }}
+  <strong>"{{ session.name }}"</strong>
+  ({{ s_id }})
+  </p>
 
+  <p>
+    {{ session.date.strftime('%A %d %B %Y') }},
+    {{ session.begin.strftime('%Hh%M') }} — {{ session.end.strftime('%Hh%M') }},
+    <strong>{{ session.location }}</strong>
+  </p>
 
-<h2>Votre évaluation de la session</h2>
+  <p>
+    Nombre de présentations réalisées :
+    <span class='blank' style='width:3em;'>&nbsp;</span>
+    (sur {{articles|count}} prévus)
+  </p>
+</div>
+
+<div class='questions'>
+<h2 class='questions-title'>Votre évaluation de la session</h2>
 
 <div class='question'>
   <h3>Nombre approximatif de présents :</h3>
@@ -93,10 +143,28 @@ Nombre de présentations réalisées : <span class='blank' style='width:3em;'>&
     &nbsp;
   </p>
 </div>
+</div>
 
 <p class='thanks'>
 Le comité d’organisation SGE vous remercie vivement pour votre contribution et votre expertise, essentielles au symposium.
 </p>
+
+</div><!--end div.page-->
+
+<!-- evaluation of each presentations -->
+  {% for art in articles %}
+  <div class='page'>
+    <img class='logo' src='{{ event_logo }}' alt="event's logo">
+    <div class='header'>
+      Session {{ s_id }},
+      <br>
+      article {{ loop.index }}/{{ articles|count }}
+    </div>
+  {{ eval_presentation(art, session) }}
+  </div><!--end div.page-->
+  {% endfor %}
+
+{% endfor %}
 
 </body>
 </html>
