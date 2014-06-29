@@ -16,6 +16,7 @@ data['article_table'] = 'bilan_papiers_programme.csv'
 data['session_table'] = 'sessions.csv'
 # Output path:
 data['render_path'] = '../SGE2014_proceedings'
+data['chair_pkg_path'] = '../chairman package'
 
 
 ### Event parameters dict

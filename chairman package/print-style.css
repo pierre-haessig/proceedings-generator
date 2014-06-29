@@ -1,0 +1,78 @@
+body {
+  font-family: sans-serif;
+  margin: 2cm;
+  font-size: 12pt;
+}
+
+h1, h2, h3 {
+  color: #004bab;
+}
+
+.title, .subtitle {
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 0.1em;
+}
+.subtitle {
+  margin-top: 0.1em;
+}
+
+.chairmen {
+  border: 1px solid #CCC;
+  margin:2em auto;
+  padding: .5em 1em;
+}
+
+.blank {
+  display: inline-block;
+  border-bottom: 1px solid #CCC;
+}
+
+/* Questions */
+.question {
+  margin-bottom: 1.5em;
+}
+
+.question h3 {
+  margin: 0.3em;
+}
+
+.question p {
+  margin: 0.3em;
+}
+
+/* Anwsers */
+
+.answer {
+  border: 1px solid #CCC;
+  text-align: center;
+}
+
+p.answer {
+  padding:.25em;
+}
+
+.answer.free-comments {
+  min-height: 5em;
+}
+
+
+table.answer {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.answer td {
+   border: 1px solid #CCC;
+   height: 1.5em;
+   vertical-align: middle;
+}
+
+/* Thanks */
+
+p.thanks {
+  text-align: center;
+  color: #004bab;
+}
