@@ -8,7 +8,7 @@
 
   {% if article.pdf -%}
   <a href="{{ root_path }}/{{ article.pdf }}" class='download-pdf available'>
-    <img src='pdf_icon.png' alt='pdf icon'>
+    <img src='{{ root_path }}/images/pdf_icon.png' alt='pdf icon'>
     <p>Article PDF</p>
   </a>
   {%- else -%}
