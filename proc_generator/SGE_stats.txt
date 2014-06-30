@@ -1,0 +1,89 @@
+200 articles read from table "bilan_papiers_programme.csv"
+
+Topics stats
+------------
+ - "Composants et systèmes sous contraintes thermiques": 7 articles
+   (0 orals, 7 posters)
+ - "Composants semi-conducteurs": 17 articles
+   (6 orals, 11 posters)
+ - "Contraintes d'usage": 9 articles
+   (6 orals, 3 posters)
+ - "Contrôle/Diagnostic": 14 articles
+   (6 orals, 8 posters)
+ - "Dispositifs EM et actionneurs spéciaux": 19 articles
+   (6 orals, 13 posters)
+ - "GE et Mathématiques appliquées": 5 articles
+   (5 orals, 0 posters)
+ - "GE et Mécanique": 6 articles
+   (6 orals, 0 posters)
+ - "GE et Physique": 5 articles
+   (5 orals, 0 posters)
+ - "GE et bio-santé": 6 articles
+   (6 orals, 0 posters)
+ - "Intégration de puissance et architecture": 12 articles
+   (6 orals, 6 posters)
+ - "Matériaux Diélectriques et systèmes d'isolation": 12 articles
+   (6 orals, 6 posters)
+ - "Matériaux magnétiques et conducteurs": 24 articles
+   (6 orals, 18 posters)
+ - "Méthodes et méthodologies en GE": 14 articles
+   (6 orals, 8 posters)
+ - "Plénière": 4 articles
+   (4 orals, 0 posters)
+ - "Systèmes Energies Renouvelables/Réseau": 19 articles
+   (6 orals, 13 posters)
+ - "Systèmes d'énergie/Transport": 11 articles
+   (6 orals, 5 posters)
+ - "Systèmes de stockage/Piles à combustible": 10 articles
+   (6 orals, 4 posters)
+ - "Thermique des composants et systèmes d'électronique de puissance": 6 articles
+   (6 orals, 0 posters)
+
+Sessions stats
+--------------
+ - K1         "Plénière 1" : 1 articles
+ - K2         "Plénière 2" : 1 articles
+ - K3         "Plénière 3" : 1 articles
+ - K4         "Plénière 4" : 1 articles
+ - SO-J1-A    "Thermique des composants et systèmes d'électronique de puissance" : 6 articles
+ - SO-J1-B    "Dispositifs EM et actionneurs spéciaux" : 6 articles
+ - SO-J1-C    "Matériaux magnétiques et conducteurs" : 6 articles
+ - SO-J2am-A  "Contraintes d'usage" : 6 articles
+ - SO-J2am-B  "Systèmes d'énergie/Transport" : 6 articles
+ - SO-J2am-C  "Matériaux Diélectriques et systèmes d'isolation" : 6 articles
+ - SO-J2pm-A  "Intégration de puissance et architecture" : 6 articles
+ - SO-J2pm-B  "Systèmes Energies Renouvelables/Réseau" : 6 articles
+ - SO-J2pm-C  "Méthodes et méthodologies en GE" : 6 articles
+ - SO-J3-A    "Composants semi-conducteurs" : 6 articles
+ - SO-J3-B    "Contrôle/Diagnostic" : 6 articles
+ - SO-J3-C    "Systèmes de stockage/Piles à combustible" : 6 articles
+ - SP-J1-A    "Composants et systèmes sous contraintes thermiques" : 7 articles
+ - SP-J1-B    "Dispositifs EM et actionneurs spéciaux" : 13 articles
+ - SP-J1-C    "Matériaux magnétiques et conducteurs" : 18 articles
+ - SP-J2-A    "Contraintes d'usage" : 3 articles
+ - SP-J2-B    "Intégration de puissance et architecture" : 6 articles
+ - SP-J2-C    "Matériaux Diélectriques et systèmes d'isolation" : 6 articles
+ - SP-J2-D    "Systèmes d'énergie/Transport" : 5 articles
+ - SP-J2-E    "Systèmes Energies Renouvelables/Réseau" : 13 articles
+ - SP-J3-A    "Composants semi-conducteurs" : 11 articles
+ - SP-J3-B    "Contrôle/Diagnostic" : 8 articles
+ - SP-J3-C    "Méthodes et méthodologies en GE" : 8 articles
+ - SP-J3-D    "Systèmes de stockage/Piles à combustible" : 4 articles
+ - SS-J1      "Session spéciale GE et Mathématiques appliquées" : 5 articles
+ - SS-J2am    "Session spéciale GE et Biologie/santé" : 6 articles
+ - SS-J2pm    "Session spéciale GE et Mécanique" : 6 articles
+ - SS-J3      "Session spéciale GE et Physique" : 5 articles
+
+Authors stats:
+653 authors found
+
+Labs stats
+----------
+171 labs found
+
+Number of labs per article:
+0 labs:   4 articles ( 2.0%)
+1 labs:  81 articles (40.5%)
+2 labs:  75 articles (37.5%)
+3 labs:  29 articles (14.5%)
+4 labs:  11 articles ( 5.5%)

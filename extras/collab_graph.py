@@ -38,21 +38,6 @@ articles.sort(key= lambda item: item['authors'])
 print('{:d} articles read from table "{}"'.format(len(articles),
                                                 data['article_table']))
 
-# Some stats:
-labs_per_art = {}
-
-for art in articles:
-    nb_lab = len(art['labs_split'])
-    if nb_lab not in labs_per_art:
-        labs_per_art[nb_lab] = 0
-    labs_per_art[nb_lab] += 1
-
-print('Stats: number of labs per article:')
-for nb_lab in sorted(labs_per_art):
-    nb_art = labs_per_art[nb_lab]
-    print('{:d} labs: {:3d} articles ({:5.1%})'.format(
-          nb_lab, nb_art, nb_art/len(articles)) )
-
 ### Build the collaboration graph:
 
 # data dict:

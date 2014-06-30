@@ -32,6 +32,17 @@ config_vars = config['c']
 data = config['data']
 
 
+# Where to write statictics:
+stats_fname = 'SGE_stats.txt'
+if stats_fname:
+    print('Writing statitics to "{}"'.format(stats_fname))
+    stats_file = io.open(stats_fname, 'w', encoding='utf-8') 
+else:
+    import sys
+    print('Writing statitics to stdout')
+    stats_file = sys.stdout
+
+
 ### Read and process the list of articles
 articles = list(read_articles(join(data['path'], data['article_table'])) )
 header, articles = articles[0], articles[1:]
@@ -40,8 +51,8 @@ header, articles = articles[0], articles[1:]
 articles.sort(key= lambda item: item['authors'])
 config_vars['articles'] = articles
 
-print('{:d} articles read from table "{}"'.format(len(articles),
-                                                data['article_table']))
+print('{:d} articles read from table "{}"'.format(
+       len(articles), data['article_table']), file=stats_file)
 
 def create_skeleton(render_path):
     '''create the skeleton of directories for the `render_path`
@@ -73,13 +84,14 @@ for art in articles:
     # Append article to its topic:
     topics[top].append(art)
 
-print('\nTopics stats:')
+print('\nTopics stats', file=stats_file)
+print('------------', file=stats_file)
 for top in sorted(topics):
     n_art = len(topics[top])
     n_poster = len([art for art in topics[top] if art['media'] == 'poster'])
     n_oral = len([art for art in topics[top] if art['media'] == 'oral'])
-    print(' - "{}": {:d} article(s)'.format(top, n_art), end=' ')
-    print('({:d} orals, {:d} posters)'.format(n_oral, n_poster))
+    print(' - "{}": {:d} articles'.format(top, n_art), end='\n   ', file=stats_file)
+    print('({:d} orals, {:d} posters)'.format(n_oral, n_poster), file=stats_file)
 
 # build topic codes:
 topics_code = {top: '{:03d}'.format(idx)
@@ -145,10 +157,13 @@ for day, day_group in sessions_groups.iteritems():
                 ss['parallel_next'] = None
                 ss['parallel_prev'] = None
 
-print('\nSessions stats:')
+print('\nSessions stats', file=stats_file)
+print('--------------', file=stats_file)
 for s_id in sorted(sessions):
     n_art = len(sessions[s_id])
-    print(' - "{}": {:d} article(s)'.format(s_id, n_art))
+    ss_name = sessions_details[s_id]['name']
+    print(' - {:10s} "{}"'.format(s_id, ss_name), file=stats_file, end=' : ')
+    print('{:d} articles'.format(n_art), file=stats_file)
 
 config_vars['sessions'] = sessions
 config_vars['sessions_groups'] = sessions_groups
@@ -174,8 +189,10 @@ for auth in sorted(authors.keys()):
         author_index[letter] = auth
 
 
-print('\nAuthors stats:')
-print('{:d} authors found'.format(len(authors)))
+print('\nAuthors stats:', file=stats_file)
+print('{:d} authors found'.format(len(authors)), file=stats_file)
+
+#TODO: nb of authors per article
 
 config_vars['authors']      = authors
 config_vars['author_index'] = author_index
@@ -192,12 +209,29 @@ for art in articles:
         if art not in labs[lab]:
             labs[lab].append(art)
 
-print('\nlabs stats:')
-print('{:d} labs found'.format(len(labs)))
+print('\nLabs stats', file=stats_file)
+print('----------', file=stats_file)
+print('{:d} labs found'.format(len(labs)), file=stats_file)
 
 for lab in sorted(labs):
     n_art = len(labs[lab])
     #print(' - "{}": {:d} article(s)'.format(lab, n_art))
+
+# Extra stats:
+print('\nNumber of labs per article:', file=stats_file)
+labs_per_art = {}
+
+for art in articles:
+    nb_lab = len(art['labs_split'])
+    if nb_lab not in labs_per_art:
+        labs_per_art[nb_lab] = 0
+    labs_per_art[nb_lab] += 1
+
+for nb_lab in sorted(labs_per_art):
+    nb_art = labs_per_art[nb_lab]
+    print('{:d} labs: {:3d} articles ({:5.1%})'.format(
+           nb_lab, nb_art, nb_art/len(articles)),
+          file=stats_file)
 
 config_vars['labs']  = labs
 
@@ -276,7 +310,6 @@ template = env.get_template('article_detail.html')
 
 for art in articles:
     fname = 'article_{:s}.html'.format(art['docid'])
-    #print(fname)
     with io.open(join(data['render_path'], 'articles', fname),
                  'w', encoding='utf-8') as out:
         out.write(template.render(config_vars, article=art, root_path='..'))
@@ -286,7 +319,6 @@ template = env.get_template('topic_detail.html')
 
 for top in topics:
     fname = 'topic_{}.html'.format(topics_code[top])
-    print(fname)
     with io.open(join(data['render_path'], 'topics', fname),
                  'w', encoding='utf-8') as out:
         out.write(template.render(config_vars, topic=top,
@@ -325,7 +357,10 @@ template = env.get_template('session_detail.html')
 
 for s_id in sessions:
     fname = 'session_{:s}.html'.format(s_id)
-    #print(fname)
     with io.open(join(data['render_path'], 'sessions', fname),
                  'w', encoding='utf-8') as out:
         out.write(template.render(config_vars, session=sessions_details[s_id], root_path='..'))
+
+# Close stats
+if stats_fname:
+    stats_file.close()
