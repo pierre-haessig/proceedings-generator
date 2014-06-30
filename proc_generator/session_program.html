@@ -22,9 +22,12 @@
   <h3 class='hours'> {{ begin.strftime('%Hh%M') }} — {{ end.strftime('%Hh%M') }} </h3>
   {% for s_id, ss in s_group|dictsort %}
     <h4 class='session-name'> {{ ss.type|title }} {{ s_id }} : {{ ss.name }}</h4>
-        <h5 class='location'>Salle : {{ ss.location}}</h5>
-        <h5 class='chairmen'>Président{{ 's' if ss.chairmen.split(',')|count > 1 else ''
-        }} : {{ ss.chairmen}}</h5>
+        <p class='location'>Salle : {{ ss.location}}</p>
+        <p class='chairmen'>Président(e){{ 's'
+            if ss.chairmen_split|count > 1 else ''}} :
+        <br>
+        {{ ss.chairmen_split|join('<br>') }}
+        </p>
 
         <ol class='article-list'>
         {% for art in sessions[s_id] %}

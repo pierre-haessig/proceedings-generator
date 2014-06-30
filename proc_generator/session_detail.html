@@ -22,7 +22,8 @@
   {% endif %}
 
   <p>
-  <strong>Chairmen</strong> : {{ session.chairmen }}
+  <strong>Président(e){{ 's'
+    if session.chairmen_split|count > 1 else ''}}</strong> : {{ session.chairmen_split|join(', ') }}
   </p>
   
   <img src='./words_{{session.id}}.png' alt='word cloud of the session (from titles and abstracts)' class='session word-cloud'>

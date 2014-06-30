@@ -113,6 +113,11 @@ def decode_date(s):
     d,m,y = s.split('/')
     return datetime.date(int(y), int(m), int(d))
 
+def split_chairmen(chairmen):
+    split = chairmen.split(';')
+    split = [name.strip() for name in split]
+    return split
+
 def read_sessions(fname):
     '''read CSV table of the sessions description
     
@@ -140,7 +145,9 @@ def read_sessions(fname):
             h,m = decode_hour(details['end'])
             details['end'] = datetime.datetime(
                 day.year, day.month, day.day, h, m)
-
+            
+            details['chairmen_split'] = split_chairmen(details['chairmen'])
+            
             sessions[s_id] = details
 
         return sessions
