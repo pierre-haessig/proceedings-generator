@@ -124,7 +124,7 @@ def read_sessions(fname):
         
         # 1) Read the headers
         header = c.next()
-        assert header == ['id', 'type', 'name', 'location', 'date', 'begin', 'end', 'chairmen']
+        assert header == ['id', 'type', 'name', 'nb papiers', 'location', 'date', 'begin', 'end', 'chairmen']
         
         sessions = {}
         for line in c:
