@@ -57,7 +57,7 @@ def read_articles(fname):
                 item['id_session'] = 'SO-XX-X'
             
             # Process the authors field to split names
-            authors = item['authors'].split(', ')
+            authors = item['authors'].split(',')
             authors_split = []
             
             for auth in authors:
