@@ -79,7 +79,7 @@ Authors stats:
 
 Labs stats
 ----------
-171 labs found
+168 labs found
  - "AIRBUS": 1 article
  - "ALSTOM GRID": 1 article
  - "APERAM Alloys Imphy": 1 article
@@ -87,6 +87,7 @@ Labs stats
  - "Alstom Transport": 1 article
  - "Aperam Alloys Amilly": 1 article
  - "Aperam Alloys Imphy": 1 article
+ - "CEA LETI-Minatec – Grenoble": 1 article
  - "CEA Tech Midi-Pyrénées": 1 article
  - "CHU de Toulouse": 1 article
  - "CIRTEM": 1 article
@@ -129,8 +130,7 @@ Labs stats
  - "IMEP-LAHC": 1 article
  - "INCDIE ICPE CA (Roumanie)": 1 article
  - "ITAV-USR3505": 1 article
- - "Institut D’Alembert ENS de Cachan": 1 article
- - "Institut D’Alembert ENS de Cachan,  3 - CEA LETI-Minatec – Grenoble": 1 article
+ - "Institut D’Alembert ENS de Cachan": 2 articles
  - "Institut Franco-Allemand de recherches de Saint-Louis": 3 articles
  - "Institut LAVOISIER": 1 article
  - "Institut National de l'Energie Solaire": 1 article
@@ -140,8 +140,7 @@ Labs stats
  - "Institut de Génétique et Microbiologie, Université Paris-Sud 11": 1 article
  - "Institut de Recherche de l'Ecole Navale": 3 articles
  - "Institut de Recherche en Systèmes Electroniques Embarqués": 1 article
- - "Institut de Recherche sur les Transports, l'Energie et la Société": 2 articles
- - "Institut de Recherche sur les Transports, l’Energie et la Société": 1 article
+ - "Institut de Recherche sur les Transports, l'Energie et la Société": 3 articles
  - "Institut de mécanique des fluides de Toulouse": 1 article
  - "Institut de recherche en informatique de Toulouse": 1 article
  - "Institut des nanotechnologies de Lyon - Site d'Ecully": 1 article
@@ -171,15 +170,13 @@ Labs stats
  - "Laboratoire LEGI": 1 article
  - "Laboratoire LGECA": 1 article
  - "Laboratoire LGEF": 1 article
- - "Laboratoire LGEP": 17 articles
- - "Laboratoire LGEP,2 - Laboratoire LIMSI": 1 article
+ - "Laboratoire LGEP": 18 articles
  - "Laboratoire LIAS": 2 articles
- - "Laboratoire LIMSI": 1 article
+ - "Laboratoire LIMSI": 2 articles
  - "Laboratoire LRP": 1 article
  - "Laboratoire LS2E": 3 articles
  - "Laboratoire LTSS, Université Amar Telidji, Laghouat, Algérie (Algérie)": 1 article
- - "Laboratoire LUSAC": 2 articles
- - "Laboratoire LUSAC,": 2 articles
+ - "Laboratoire LUSAC": 4 articles
  - "Laboratoire Mécatronique - Méthodes, Modèles et Métiers": 1 article
  - "Laboratoire PRISME": 1 article
  - "Laboratoire RITM": 1 article
@@ -255,6 +252,6 @@ Labs stats
 Number of labs per article:
 0 labs:   4 articles ( 2.0%)
 1 labs:  81 articles (40.5%)
-2 labs:  75 articles (37.5%)
+2 labs:  74 articles (37.0%)
 3 labs:  29 articles (14.5%)
-4 labs:  11 articles ( 5.5%)
+4 labs:  12 articles ( 6.0%)
