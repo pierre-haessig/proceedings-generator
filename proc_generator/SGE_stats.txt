@@ -41,38 +41,38 @@ Topics stats
 
 Sessions stats
 --------------
- - K1         "Plénière 1" : 1 articles
- - K2         "Plénière 2" : 1 articles
- - K3         "Plénière 3" : 1 articles
- - K4         "Plénière 4" : 1 articles
- - SO-J1-A    "Thermique des composants et systèmes d'électronique de puissance" : 6 articles
- - SO-J1-B    "Dispositifs EM et actionneurs spéciaux" : 6 articles
- - SO-J1-C    "Matériaux magnétiques et conducteurs" : 6 articles
- - SO-J2am-A  "Contraintes d'usage" : 6 articles
- - SO-J2am-B  "Systèmes d'énergie/Transport" : 6 articles
- - SO-J2am-C  "Matériaux Diélectriques et systèmes d'isolation" : 6 articles
- - SO-J2pm-A  "Intégration de puissance et architecture" : 6 articles
- - SO-J2pm-B  "Systèmes Energies Renouvelables/Réseau" : 6 articles
- - SO-J2pm-C  "Méthodes et méthodologies en GE" : 6 articles
- - SO-J3-A    "Composants semi-conducteurs" : 6 articles
- - SO-J3-B    "Contrôle/Diagnostic" : 6 articles
- - SO-J3-C    "Systèmes de stockage/Piles à combustible" : 6 articles
- - SP-J1-A    "Composants et systèmes sous contraintes thermiques" : 7 articles
- - SP-J1-B    "Dispositifs EM et actionneurs spéciaux" : 13 articles
- - SP-J1-C    "Matériaux magnétiques et conducteurs" : 18 articles
- - SP-J2-A    "Contraintes d'usage" : 3 articles
- - SP-J2-B    "Intégration de puissance et architecture" : 6 articles
- - SP-J2-C    "Matériaux Diélectriques et systèmes d'isolation" : 6 articles
- - SP-J2-D    "Systèmes d'énergie/Transport" : 5 articles
- - SP-J2-E    "Systèmes Energies Renouvelables/Réseau" : 13 articles
- - SP-J3-A    "Composants semi-conducteurs" : 11 articles
- - SP-J3-B    "Contrôle/Diagnostic" : 8 articles
- - SP-J3-C    "Méthodes et méthodologies en GE" : 8 articles
- - SP-J3-D    "Systèmes de stockage/Piles à combustible" : 4 articles
- - SS-J1      "Session spéciale GE et Mathématiques appliquées" : 5 articles
- - SS-J2am    "Session spéciale GE et Biologie/santé" : 6 articles
- - SS-J2pm    "Session spéciale GE et Mécanique" : 6 articles
- - SS-J3      "Session spéciale GE et Physique" : 5 articles
+ - K1         "Plénière 1": 1 articles
+ - K2         "Plénière 2": 1 articles
+ - K3         "Plénière 3": 1 articles
+ - K4         "Plénière 4": 1 articles
+ - SO-J1-A    "Thermique des composants et systèmes d'électronique de puissance": 6 articles
+ - SO-J1-B    "Dispositifs EM et actionneurs spéciaux": 6 articles
+ - SO-J1-C    "Matériaux magnétiques et conducteurs": 6 articles
+ - SO-J2am-A  "Contraintes d'usage": 6 articles
+ - SO-J2am-B  "Systèmes d'énergie/Transport": 6 articles
+ - SO-J2am-C  "Matériaux Diélectriques et systèmes d'isolation": 6 articles
+ - SO-J2pm-A  "Intégration de puissance et architecture": 6 articles
+ - SO-J2pm-B  "Systèmes Energies Renouvelables/Réseau": 6 articles
+ - SO-J2pm-C  "Méthodes et méthodologies en GE": 6 articles
+ - SO-J3-A    "Composants semi-conducteurs": 6 articles
+ - SO-J3-B    "Contrôle/Diagnostic": 6 articles
+ - SO-J3-C    "Systèmes de stockage/Piles à combustible": 6 articles
+ - SP-J1-A    "Composants et systèmes sous contraintes thermiques": 7 articles
+ - SP-J1-B    "Dispositifs EM et actionneurs spéciaux": 13 articles
+ - SP-J1-C    "Matériaux magnétiques et conducteurs": 18 articles
+ - SP-J2-A    "Contraintes d'usage": 3 articles
+ - SP-J2-B    "Intégration de puissance et architecture": 6 articles
+ - SP-J2-C    "Matériaux Diélectriques et systèmes d'isolation": 6 articles
+ - SP-J2-D    "Systèmes d'énergie/Transport": 5 articles
+ - SP-J2-E    "Systèmes Energies Renouvelables/Réseau": 13 articles
+ - SP-J3-A    "Composants semi-conducteurs": 11 articles
+ - SP-J3-B    "Contrôle/Diagnostic": 8 articles
+ - SP-J3-C    "Méthodes et méthodologies en GE": 8 articles
+ - SP-J3-D    "Systèmes de stockage/Piles à combustible": 4 articles
+ - SS-J1      "Session spéciale GE et Mathématiques appliquées": 5 articles
+ - SS-J2am    "Session spéciale GE et Biologie/santé": 6 articles
+ - SS-J2pm    "Session spéciale GE et Mécanique": 6 articles
+ - SS-J3      "Session spéciale GE et Physique": 5 articles
 
 Authors stats:
 653 authors found
@@ -80,6 +80,177 @@ Authors stats:
 Labs stats
 ----------
 171 labs found
+ - "AIRBUS": 1 article
+ - "ALSTOM GRID": 1 article
+ - "APERAM Alloys Imphy": 1 article
+ - "Alpha (États-Unis)": 1 article
+ - "Alstom Transport": 1 article
+ - "Aperam Alloys Amilly": 1 article
+ - "Aperam Alloys Imphy": 1 article
+ - "CEA Tech Midi-Pyrénées": 1 article
+ - "CHU de Toulouse": 1 article
+ - "CIRTEM": 1 article
+ - "Centre National d'Etudes Spatiales": 1 article
+ - "Centre Universitaire Champollion": 1 article
+ - "Centre de Recherche et d'Ingénierie de l'ESTACA": 5 articles
+ - "DGA - Technique Terrestre": 1 article
+ - "Department of Advanced Energy, Graduate School of Frontier Sciences, The University of Tokyo, Japan (Japon)": 1 article
+ - "Department of Mathematics, Texas A&M University (USA)": 2 articles
+ - "Dpt. Energie, SUPELEC-Campus Gif": 9 articles
+ - "Département de Mécanique Appliquée R. Chaléat": 1 article
+ - "ECOWAYS": 1 article
+ - "EDF R&D": 1 article
+ - "EFi Automotive - Service Recherche Avancée": 1 article
+ - "ENS Cachan": 1 article
+ - "ENS Rennes": 1 article
+ - "ENSAM (Maroc)": 1 article
+ - "ESTIA Recherche": 1 article
+ - "Ecole Centrale de Lille": 1 article
+ - "Ecole Centrale de Lyon, University of Lyon, Ampere CNRS UMR 5005": 1 article
+ - "Ecole Nationale d'Ingénieurs de Tarbes": 1 article
+ - "Ecole des Hautes Etudes d’Ingénieur de Lille": 1 article
+ - "EdF Lab": 1 article
+ - "Electrical Engineering Department, Engineering Faculty, Universitas Lampung (Unila) (Indonésie)": 1 article
+ - "EliBIO, Laboratoire IMS, IPB CNRS UMR 5218 Université de Bordeaux": 1 article
+ - "Engineering Faculty, Universitas Indonesia (UI) (Indonésie)": 1 article
+ - "FEMTO-ST": 4 articles
+ - "Faculty of Enginnering (Égypte)": 1 article
+ - "Faculty of Mathematics, Physics and Informatics, Comenius University, Bratislava, Slovakia": 1 article
+ - "Federal University of Santa Catarina - UFSC (BRAZIL) (Brésil)": 1 article
+ - "Freescale Semiconductors": 2 articles
+ - "GERAC/THALES": 1 article
+ - "GRUCAD/EEL/CTC/UFSC (Brazil)": 1 article
+ - "Groupe d'Etude de la Matière Condensée": 1 article
+ - "Groupe de Recherche en Matériaux, Microélectronique, Acoustique et Nanotechnologies": 3 articles
+ - "Groupe de physique des matériaux": 1 article
+ - "Haute Ecole Spécialisée de Suisse Occidentale (Suisse)": 1 article
+ - "ICECHIM (Roumanie)": 1 article
+ - "IFP Energies Nouvelles": 2 articles
+ - "IMEP-LAHC": 1 article
+ - "INCDIE ICPE CA (Roumanie)": 1 article
+ - "ITAV-USR3505": 1 article
+ - "Institut D’Alembert ENS de Cachan": 1 article
+ - "Institut D’Alembert ENS de Cachan,  3 - CEA LETI-Minatec – Grenoble": 1 article
+ - "Institut Franco-Allemand de recherches de Saint-Louis": 3 articles
+ - "Institut LAVOISIER": 1 article
+ - "Institut National de l'Energie Solaire": 1 article
+ - "Institut P' CNRS - Université de Poitiers - ENSMA UPR 3346 SP2MI": 1 article
+ - "Institut d'Electronique du Sud IES": 6 articles
+ - "Institut d'Electronique et de Télécommunications de Rennes": 1 article
+ - "Institut de Génétique et Microbiologie, Université Paris-Sud 11": 1 article
+ - "Institut de Recherche de l'Ecole Navale": 3 articles
+ - "Institut de Recherche en Systèmes Electroniques Embarqués": 1 article
+ - "Institut de Recherche sur les Transports, l'Energie et la Société": 2 articles
+ - "Institut de Recherche sur les Transports, l’Energie et la Société": 1 article
+ - "Institut de mécanique des fluides de Toulouse": 1 article
+ - "Institut de recherche en informatique de Toulouse": 1 article
+ - "Institut des nanotechnologies de Lyon - Site d'Ecully": 1 article
+ - "Ion Beam Services": 1 article
+ - "LEPMI UMR CNRS 5279": 1 article
+ - "LETIA/CAME (Bénin)": 1 article
+ - "Lab for Electrical Machines, University of Applied Sciences, Düsseldorf, Germany (Allemagne)": 1 article
+ - "Laboratoire  IFSTTAR-GRETTIA": 1 article
+ - "Laboratoire AMPERE": 17 articles
+ - "Laboratoire FC Lab": 1 article
+ - "Laboratoire G2ELab": 18 articles
+ - "Laboratoire GREAH": 5 articles
+ - "Laboratoire GREEN": 4 articles
+ - "Laboratoire Génie de Production LGP": 2 articles
+ - "Laboratoire Géoressources": 1 article
+ - "Laboratoire IEF, CNRS, Université Paris-Sud, Orsay": 1 article
+ - "Laboratoire IFSTTAR-LESCOT": 1 article
+ - "Laboratoire IFSTTAR-LTE": 2 articles
+ - "Laboratoire IFSTTAR-LTN": 5 articles
+ - "Laboratoire IMS": 4 articles
+ - "Laboratoire IREENA": 6 articles
+ - "Laboratoire J. Lions,UPMC/IUF/Brown University": 1 article
+ - "Laboratoire L2EP": 15 articles
+ - "Laboratoire LAAS": 8 articles
+ - "Laboratoire LAPLACE": 19 articles
+ - "Laboratoire LBMS": 2 articles
+ - "Laboratoire LEGI": 1 article
+ - "Laboratoire LGECA": 1 article
+ - "Laboratoire LGEF": 1 article
+ - "Laboratoire LGEP": 17 articles
+ - "Laboratoire LGEP,2 - Laboratoire LIMSI": 1 article
+ - "Laboratoire LIAS": 2 articles
+ - "Laboratoire LIMSI": 1 article
+ - "Laboratoire LRP": 1 article
+ - "Laboratoire LS2E": 3 articles
+ - "Laboratoire LTSS, Université Amar Telidji, Laghouat, Algérie (Algérie)": 1 article
+ - "Laboratoire LUSAC": 2 articles
+ - "Laboratoire LUSAC,": 2 articles
+ - "Laboratoire Mécatronique - Méthodes, Modèles et Métiers": 1 article
+ - "Laboratoire PRISME": 1 article
+ - "Laboratoire RITM": 1 article
+ - "Laboratoire Roberval de Mécanique": 1 article
+ - "Laboratoire SATIE": 27 articles
+ - "Laboratoire TEMPO, Université de Valencienne": 1 article
+ - "Laboratoire Telecom Claude Chappe": 1 article
+ - "Laboratoire Transports et Environnement": 1 article
+ - "Laboratoire d'Electromécanique de Compiègne": 3 articles
+ - "Laboratoire d'Electronique, Electrotechnique, Automatique et de Télécommunications, Université de Douala, Cameroun (Cameroun)": 2 articles
+ - "Laboratoire de Mécanique et Technologie LMT": 3 articles
+ - "Laboratoire de Physique et Mécanique Textiles": 1 article
+ - "Laboratoire de cristallographie et sciences des matériaux": 1 article
+ - "Laboratoire de mécanique de Lille": 1 article
+ - "Laboratoire des Multimatériaux et Interfaces": 1 article
+ - "Laboratoire des Sciences des Procédés et des Matériaux": 1 article
+ - "Laboratoire des Signaux et Systèmes L2S": 1 article
+ - "Laboratoire des Technologies Nouvelles": 1 article
+ - "Laboratoire des technologies innovantes LTI": 1 article
+ - "Laboratoire des écoulements géophysiques et industriels": 1 article
+ - "Laboratory of Applied Mineral Chemistry, Department of Chemistry, University Tunis El Manar, Faculty of Sciences, Campus 2092, Tunis, Tunisia (Tunisie)": 1 article
+ - "Leroy-Somer": 2 articles
+ - "Luth, Observatoire de Paris-Meudon": 1 article
+ - "MEGEVH": 2 articles
+ - "Microsemi Power Module Products": 1 article
+ - "Microspire": 1 article
+ - "Mitsubishi Electric R&D Centre Europe [France]": 1 article
+ - "Moving Magnet Technologies S.A.": 2 articles
+ - "Nexans": 1 article
+ - "Nexans Research Center": 2 articles
+ - "PSA Peugeot-Citroën": 3 articles
+ - "RENAULT": 2 articles
+ - "Recherche et Ingénieurie en Electronique de Puissance": 1 article
+ - "SACM": 1 article
+ - "SAFRAN Messier-Bugatti-Dowty": 1 article
+ - "SAFRAN Technofan": 1 article
+ - "SBT": 1 article
+ - "SIREPE": 1 article
+ - "SNCF, Département innovation et recherche": 1 article
+ - "STMicroelectronics": 2 articles
+ - "Schneider Electric": 1 article
+ - "School of Materials, University of Manchester (Royaume-Uni)": 4 articles
+ - "Siemens AG Berlin, Dept. R&D (Allemagne)": 1 article
+ - "Siemens T&D Grenoble, Dept. R&D": 1 article
+ - "Supergrid Institute": 1 article
+ - "THALES Chair on Advanced Analog Design - Supélec": 1 article
+ - "THALES Microelectronics": 1 article
+ - "THALES Systèmes Aéroportés": 1 article
+ - "Technocentre Renault - Direction de l'Électronique Avancée": 1 article
+ - "Technology Dept. – Electrical Power Converter (EPC) Group, CERN": 1 article
+ - "Trinity College Dublin (Irlande)": 1 article
+ - "Universidad del País Vasco - Euskal Herriko Unibertsitatea (SPAIN) (Espagne)": 1 article
+ - "Universite Politehnica de Bucarest (Roumanie)": 1 article
+ - "Università degli Studi di Perugia - UNIPG (ITALY) (Italie)": 1 article
+ - "Université Grenoble Alpes": 2 articles
+ - "Université Grenoble Alpes, G2Elab/Ins NEEL": 1 article
+ - "Université Libanaise  (UL-GET/LPE) (Liban)": 1 article
+ - "Université Lille Nord de France": 1 article
+ - "Université Mohamed El Bachir El Ibrahimi BBA (Algérie), 2- Laboratoire LIAS": 1 article
+ - "Université Paris Ouest Nanterre La Défense - IUT de Ville d'Avray": 1 article
+ - "Université Paris-Est Marne La Vallée": 1 article
+ - "Université Paul Sabatier-Toulouse III ": 1 article
+ - "Université Sétif 1 (Algérie)": 2 articles
+ - "Université d'Abomey Calavi (Bénin)": 1 article
+ - "Université de Toulouse": 1 article
+ - "Université des Siences et Techniques de Masuku (Gabon)": 1 article
+ - "VALEO": 1 article
+ - "VESTA-SYSTEM": 1 article
+ - "Valeo S.E. Créteil": 1 article
+ - "ValoTec": 1 article
+ - "VeDeCom": 1 article
 
 Number of labs per article:
 0 labs:   4 articles ( 2.0%)

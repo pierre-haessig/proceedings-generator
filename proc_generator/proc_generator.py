@@ -162,7 +162,7 @@ print('--------------', file=stats_file)
 for s_id in sorted(sessions):
     n_art = len(sessions[s_id])
     ss_name = sessions_details[s_id]['name']
-    print(' - {:10s} "{}"'.format(s_id, ss_name), file=stats_file, end=' : ')
+    print(' - {:10s} "{}"'.format(s_id, ss_name), file=stats_file, end=': ')
     print('{:d} articles'.format(n_art), file=stats_file)
 
 config_vars['sessions'] = sessions
@@ -215,7 +215,9 @@ print('{:d} labs found'.format(len(labs)), file=stats_file)
 
 for lab in sorted(labs):
     n_art = len(labs[lab])
-    #print(' - "{}": {:d} article(s)'.format(lab, n_art))
+    plural = 's' if n_art > 1 else ''
+    lab = lab.replace(' (France)', '')
+    print(' - "{}": {:d} article{}'.format(lab, n_art, plural), file=stats_file)
 
 # Extra stats:
 print('\nNumber of labs per article:', file=stats_file)

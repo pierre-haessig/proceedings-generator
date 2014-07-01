@@ -6,21 +6,10 @@
   <h1>Laboratoires et centres de recherche</h1>
   
   <p>
-  <em>Liste des laboratoires, centres de recherche ou institution
-  des contributeurs de la conférence
-  <br>
-  (comptage approximatif, car totalement dépendant de la graphie des institutions)
+  <em>Liste des contributions, classées par laboratoires, centres de recherche
+  ou institutions des contributeurs de la conférence :
   </em>
   </p>
-  
-  <ul>
-  {% for lab, art_list in labs|dictsort %}
-    <li >{{ lab.replace(' (France)', '')}} : <strong>{{ art_list| count }}</strong>
-         article{{ 's' if art_list|count>1 else '' }} </li>
-  {% endfor %}
-  </ul>
-
-  <em>Liste des contributions, classées par laboratoire</em>
   
   {% import 'article_macros.html' as article_macros %}
   <ul class="lab-list">
