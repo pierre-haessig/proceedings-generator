@@ -26,7 +26,9 @@ config = {}
 execfile('config.py', {}, config)
 
 # locale (for time formatting)
-assert locale.getdefaultlocale()[0][0:2] == config['c']['lang']
+print('Lang set to {}'.format(config['c']['lang']))
+print(locale.setlocale(locale.LC_ALL, (config['c']['lang'], 'UTF-8')))
+
 
 config_vars = config['c']
 data = config['data']
@@ -347,10 +349,10 @@ with io.open(join(data['render_path'], 'session_list.html'),
              'w', encoding='utf-8') as out:
     out.write(template.render(config_vars, root_path='.'))
     
-# 6b) Complete programe of sessions (for printed booklet)
-template = env.get_template('session_program.html')
+# 6b) Complete program of the sessions (for printed booklet)
+template = env.get_template('program_book.html')
 
-with io.open(join(data['render_path'], 'session_program.html'),
+with io.open(join(data['render_path'], 'program_book.html'),
              'w', encoding='utf-8') as out:
     out.write(template.render(config_vars, root_path='.'))
 
