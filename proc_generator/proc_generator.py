@@ -2,6 +2,10 @@
 # -*- coding: utf-8 -*-
 # Pierre Haessig — June 2014
 """ Generator for the html files of the proceedings
+
+* html website
+* program book (flat doc for printing)
+* chairman documents (for session evaluation, for printing)
 """
 
 from __future__ import division, print_function, unicode_literals
@@ -364,6 +368,13 @@ for s_id in sessions:
     with io.open(join(data['render_path'], 'sessions', fname),
                  'w', encoding='utf-8') as out:
         out.write(template.render(config_vars, session=sessions_details[s_id], root_path='..'))
+
+# 7) Chairman documents (for session and paper evaluations)
+template = env.get_template('chair_eval_session.html')
+
+with io.open(join(data['chair_pkg_path'], 'chairman_package.html'),
+             'w', encoding='utf-8') as out:
+    out.write(template.render(config_vars, root_path='.'))
 
 # Close stats
 if stats_fname:
