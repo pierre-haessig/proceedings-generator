@@ -56,8 +56,9 @@ for art in articles:
 
 print('articles are grouped in {:d} sessions'.format(len(sessions)))
 
-# Add a special "all_papers" session
-sessions['all_papers'] = articles
+### Add a special meta sessions:
+## "all_papers" session
+#sessions['all_papers'] = articles
 # Titles only
 sessions['all_titles'] = [{'title': art['title'],
                            'abstract': ''}
@@ -66,14 +67,17 @@ sessions['all_titles'] = [{'title': art['title'],
 # Select only some:
 #sessions = {key: sessions[key] for key in ['all_titles']}
 
-# Blacklist
-black_list = ['K1']
-# TODO
 
-### Write session texts:
-
+### Generate word clouds
 for s_id in sessions:
+    if len(sessions[s_id]) <= 1:
+        print('skipping {} (too few articles)'.format(s_id))
+        continue
     fname_txt = 'words_{}.txt'.format(s_id)
+    fname_svg = fname_txt.replace('.txt', '.svg')
+    fname_png = fname_txt.replace('.txt', '.png')
+    
+    # Write session texts
     with io.open(fname_txt, 'w', encoding='utf-8') as out:
         for art in sessions[s_id]:
             out.write(art['title'])
@@ -82,17 +86,22 @@ for s_id in sessions:
             out.write('\n')
     print('{:2d} abstracts written to "{}"'.format(len(sessions[s_id]), fname_txt))
     
-#    # Run WordCram script:
-#    print('Word cloud generation...', end='')
-#    subprocess.call([word_cram, fname_txt])
-#    print('DONE')
+    # Run WordCram script:
+    print('Word cloud generation...', end='')
+    subprocess.call([word_cram, fname_txt])
+    print('DONE')
     
     # Inkscape SVG-> PNG conversion
     print('Inkscape conversion...', end='')
     subprocess.call(['inkscape', '--export-area-drawing',
-                     '--export-png='+fname_txt.replace('.txt', '.png'),
-                     fname_txt.replace('.txt', '.svg')
+                     '--export-png='+fname_png,
+                     fname_svg
                     ])
     print('DONE')
-
+    
+    # Copy PNG to render_path/sessions
+    print('Copying PNG to session folder...', end='')
+    shutil.copyfile(fname_png,
+                    join(data['render_path'], 'sessions', fname_png))
+    print('DONE')
 

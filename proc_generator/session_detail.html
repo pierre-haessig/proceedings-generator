@@ -26,7 +26,9 @@
     if session.chairmen_split|count > 1 else ''}}</strong> : {{ session.chairmen_split|join(', ') }}
   </p>
   
+  {% if sessions[session.id]|count > 1 %}
   <img src='./words_{{session.id}}.png' alt='word cloud of the session (from titles and abstracts)' class='session word-cloud'>
+  {% endif %}
   
   <p>
   {{sessions[session.id]|count}} articles dans cette session :
