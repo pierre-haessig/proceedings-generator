@@ -377,9 +377,9 @@ with io.open(join(data['chair_pkg_path'], 'chairman_package.html'),
     out.write(template.render(config_vars, root_path='.'))
 
 # 7b) Chairman documents, split by session
-template = env.get_template('chair_eval_session_list.html')
+template = env.get_template('chair_eval_index.html')
 
-with io.open(join(data['chair_pkg_path'], 'chair_eval_session_list.html'),
+with io.open(join(data['chair_pkg_path'], 'index.html'),
              'w', encoding='utf-8') as out:
     out.write(template.render(config_vars, root_path='.'))
 
