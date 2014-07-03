@@ -1,0 +1,111 @@
+<!doctype html>
+
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+
+  <title>{% block title %}Actes de la conférence{% endblock %} - {{ event_name }}</title>
+  <meta name="description" content="Actes de la conférence {{ event_name }}">
+  <meta name="author" content="organisateurs {{ event_name }}">
+  <meta name="viewport" content="width=device-width">
+  
+  <link rel="stylesheet" href="{{ root_path }}/style.css">
+</head>
+
+<body>
+
+<div id='page'>
+<header id='header'>
+  {% block header %}
+  <img class='logo' src='{{ root_path }}/images/{{ event_logo }}' alt="event's logo">
+  <h1 class='event-name'><a href='{{ event_website }}'>{{ event_name }}</a></h1>
+  <h2 class='event-description'>{{ event_date }}, {{ event_location }}</h2>
+  {% endblock header %}
+</header>
+
+<section class="content">
+  <h1>Fiches d'évaluation des sessions</h1>
+    
+    <p>
+    Documents à distribuer aux chairmen de chaque session, pour
+    l'évaluation des sessions et des présentations.
+    </p>
+    
+    <p>
+    Pour chaque session il y a à remplir :
+    <ul>
+      <li>une fiche d'évaluation de la session</li>
+      <li>des fiches d'évaluation des présentation (une par contribution)</li>
+    </ul>
+    </p>
+    
+    <h2>1) Ensemble des fiches</h2>
+    
+    <p>
+    Fiches concaténées dans un fichiers, classées par session :
+    
+     <ul>
+      <li>Télécharger les <a href='chairman_package.pdf'>fiches PDF</a></li>
+      <li>Voir les <a href='chairman_package.html'>fiches HTML</a></li>
+    </ul>
+    </p>
+    
+    <p>
+      Nombre de fiches "session" : {{sessions|count}}
+      <br>
+      Nombre de fiches "article" : {{articles|count}}
+    </p>
+    
+    <h2>2) Fiches séparées par sessions</h2>
+    
+    <p>
+      Cliquer sur une session pour télécharger la fiche PDF correspondante
+    </p>
+    
+  {% for day, day_group in sessions_groups|dictsort %}
+    <h2 class='day'>{{ day.strftime('%A %d %B %Y') }}</h2>
+
+    <ul class='session-group-list'>
+    {% for (begin, end), s_group in day_group|dictsort %}
+      <li class='session-group'>
+        <span class='hours'> {{ begin.strftime('%Hh%M') }} — {{ end.strftime('%Hh%M') }} </span>
+        <ul class='session-list'>
+          {% for s_id, ss in s_group|dictsort %}
+          <li>
+          <div class='session-type'>{{ ss.type }}</div>
+          <a href='sessions/{{ s_id }}.pdf'>
+          <div class='session-box {{ ss.location|lower|replace(' ','-') }}'>
+            <strong class='session-name'>{{ ss.name }}</strong>
+            <br>({{ ss.id }})
+            
+            <div class='chairmen'>
+              <small>Président(e){{ 's'
+              if ss.chairmen_split|count > 1 else ''}} :
+              </small>
+            <br>
+            {{ ss.chairmen_split|join('<br>') }}
+            </div>
+          </div>
+          </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+    </ul>
+  {% endfor %}
+
+</section>
+
+<footer id='footer'>
+  {% block footer %}
+  <a href='{{ event_website }}'>{{ event_name }}</a>,
+  {{ event_date }}, {{ event_location }}
+  <br>
+  <small class='credits'>mise en forme web : {{ website_credits }} </small>
+  {% endblock footer %}
+</footer>
+</div>
+
+</body>
+</html>
