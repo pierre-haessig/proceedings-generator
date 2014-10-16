@@ -7,5 +7,5 @@ CHAIR_FOLDER = chairman\ package
 
 ### Upload webpages to remote server
 push:
-	rsync -avd $(PROC_FOLDER)/ eole:www/SGE2014
-	rsync -avd $(CHAIR_FOLDER)/ eole:www/SGE2014/chair
+	rsync -avd $(PROC_FOLDER)/ sgeconf:www/actes/2014
+#	rsync -avd $(CHAIR_FOLDER)/ sgeconf:www/actes/2014/chair
