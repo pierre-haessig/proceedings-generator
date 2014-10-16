@@ -143,12 +143,15 @@ ul.sponsor_list li {
   list-style-type: none;
   display: block;
   float: left;
+  width:260px;
   margin: 30px;
 }
 
 ul.sponsor_list img {
   max-height:80px;
-  max-width:300px;
+  max-width:260px;
+  display: block;
+  margin: 0px auto;
 }
 
 ul.sponsor_list span {

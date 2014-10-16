@@ -29,7 +29,7 @@ c['lang'] = 'fr'
 c['event_name'] = 'SGE 2014'
 c['event_date'] = '8—10 juillet 2014'
 c['event_location']= 'Cachan (France)'
-c['event_website'] = 'http://sge2014.sciencesconf.org/'
+c['event_website'] = 'http://www.sge-conf.fr/sge-2014/'
 c['event_logo'] = 'logo_sge.png'
 
 c['website_credits'] = 'Pierre Haessig, laboratoire SATIE'

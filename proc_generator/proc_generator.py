@@ -45,7 +45,7 @@ if stats_fname:
     stats_file = io.open(stats_fname, 'w', encoding='utf-8') 
 else:
     import sys
-    print('Writing statitics to stdout')
+    print('Writing statistics to stdout')
     stats_file = sys.stdout
 
 
@@ -290,7 +290,7 @@ copy_static_files(data)
 ### Write web pages:
 
 # Create a template "Environment":
-templ_path = os.path.dirname(__file__)
+templ_path = join(os.path.dirname(__file__), 'templates')
 loader =  FileSystemLoader(templ_path)
 env = Environment(loader=loader, undefined=jinja2.StrictUndefined)
 env.globals['topics_code'] = topics_code
