@@ -4,7 +4,7 @@
 """ Read CSV table of all contributions to the conference
 """
 
-from __future__ import division, print_function
+
 
 import io
 import csv
@@ -26,7 +26,8 @@ def decode_labs(labs):
     Returns the list of labs' name.
     ['Dpt. Energie, SUPELEC-Campus Gif', 'Laboratoire L2EP']
     '''
-    labs = re.findall('(^\d - |, \d - )(.*?)(?=, \d - |$)', labs)
+    # labs = re.findall('(^\d - |, \d - )(.*?)(?=, \d - |$)', labs)
+    labs = re.findall(r'(^\d - |, \d - )(.*?)(?=, \d - |$)', labs)
     labs = [lab for (idx, lab) in labs]
     return labs
 
@@ -38,18 +39,20 @@ def read_articles(fname):
     '''
     re_affil = re.compile(r'\((\d+)\)')
     
-    with io.open(fname, encoding='utf-8') as f:
-        c = csv.reader(utf_8_encoder(f), delimiter=';')
+    with io.open(fname, mode = 'r', encoding='utf-8') as f:
+        c = csv.reader(f, delimiter=';')
         
         # 1) Read the headers
-        header = c.next()
+        header = next(c)
         header = [head.lower() for head in header]
         yield header
         
         for line in c:
-            item = {head: line[idx].strip().decode('utf-8')
-                    for idx, head in enumerate(header)}
-            
+            # item = {head: line[idx].strip().decode('utf-8')
+            #         for idx, head in enumerate(header)}
+            # line[idx] is already a str under Python3
+            item = {head: line[idx].strip()
+                    for idx, head in enumerate(header)}            
             # Manually fill blanks:
             if item['topic'] == '':
                 item['topic'] = 'no topic'
@@ -86,22 +89,31 @@ def read_sponsors(fname):
     
     Returns a list of dict, with 3 keys: 'name', 'url', 'logo'
     '''
-    with io.open(fname, encoding='utf-8') as f:
-        c = csv.reader(utf_8_encoder(f))
+    with io.open(fname, mode = 'r', encoding='utf-8') as f:
+        c = csv.reader(f)
         
         # 1) Read the headers
-        header = c.next()
+        header = next(c)
         assert header == ['name', 'url', 'logo']
         
         sponsors = []
+        # for line in c:
+        #     if len(line) < len(header): continue
+        #     sponsors.append({
+        #         'name': line[0].decode('utf-8'),
+        #         'url':  line[1].decode('utf-8'),
+        #         'logo': line[2].decode('utf-8'),
+        #         })
         for line in c:
-            if len(line) < len(header): continue
+            if len(line) < len(header): 
+                continue
+            # CSV reader returns str, so no .decode() needed
             sponsors.append({
-                'name': line[0].decode('utf-8'),
-                'url':  line[1].decode('utf-8'),
-                'logo': line[2].decode('utf-8'),
-                })
-        
+                'name': line[0].strip(),
+                'url':  line[1].strip(),
+                'logo': line[2].strip(),
+            })
+
         return sponsors
 
 def decode_hour(s):
@@ -124,17 +136,18 @@ def read_sessions(fname):
     Returns a dict of session dict
      'session_id' -> {'name': 'session name', 'location': 'some place', 'date': ....}
     '''
-    with io.open(fname, encoding='utf-8') as f:
-        c = csv.reader(utf_8_encoder(f))
+    with io.open(fname, mode = 'r', encoding='utf-8') as f:
+        c = csv.reader(f)
         
         # 1) Read the headers
-        header = c.next()
+        header = next(c)
         assert header == ['id', 'type', 'name', 'nb papiers', 'location', 'date', 'begin', 'end', 'chairmen']
         
         sessions = {}
         for line in c:
             if len(line) < len(header): continue
-            details = {head: line[idx].decode('utf-8') for idx, head in enumerate(header)}
+            # details = {head: line[idx].decode('utf-8') for idx, head in enumerate(header)}
+            details = {head: line[idx].strip() for idx, head in enumerate(header)}
             s_id = details['id']
             
             day = decode_date(details['date'])
