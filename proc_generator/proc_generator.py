@@ -17,7 +17,7 @@ import io
 import locale
 import jinja2
 from jinja2 import Environment, FileSystemLoader
-
+from importlib import reload
 import data_reader
 reload(data_reader)
 
@@ -27,7 +27,8 @@ from data_reader import (
 
 ### Read configuration
 config = {}
-execfile('config.py', {}, config)
+# execfile('config.py', {}, config)
+exec(open('config.py').read(), {}, config)
 
 # locale (for time formatting)
 print('Lang set to {}'.format(config['c']['lang']))
@@ -149,8 +150,8 @@ for s_id in sessions_details:
     sessions_groups[s_date][s_begin, s_end][s_id] = sessions_details[s_id]
 
 # Create parallel_next and parallel_prev links
-for day, day_group in sessions_groups.iteritems():
-    for (begin, end), s_group in day_group.iteritems():
+for day, day_group in sessions_groups.items():
+    for (begin, end), s_group in day_group.items():
         sorted_ids = sorted(s_group)
         for i, s_id in enumerate(sorted_ids):
             id_next = sorted_ids[(i+1) % len(sorted_ids)]
